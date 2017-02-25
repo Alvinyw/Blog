@@ -1,3 +1,7 @@
+﻿#Alvin's Blog
+
+<a href="https://alvinyw.github.io/Blog/">https://alvinyw.github.io/Blog/</a>
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Alvinyw/Blog/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
