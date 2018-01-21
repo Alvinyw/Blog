@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="CodeHighlight.min.js"></script>
+<link rel="stylesheet" type="text/css" href="CodeHighlight.css" />
+<style>
+h1 { width:980px; margin:50px auto 20px;}
+pre { width:948px; margin:0 auto;}
+</style>
+</head>
+
+<body>
+<h1>CodeHighlight Demo</h1>
+<pre id="CodeHighlight">
+&lt;html>
+&lt;head>
+&lt;title>Thumbnail Navigation&lt;/title>
+&lt;/head>
+&lt;body>
+&lt;div id="image-container" style="width: 150px; height: 525px; border: solid 1px #ddd; display: inline-block">&lt;/div>
+&lt;div style="width: 700px; height: 525px; border: solid 1px #ddd; display: inline-block; position: relative;">
+    &lt;div id="video-container" style="width:100%;height:100%;">&lt;/div>
+    &lt;div id="big-image-container" style="width:100%;height:100%;display:none;">&lt;/div>
+    &lt;div id="black-bar" style="width: 100%; padding: 10px 0; text-align: center; background-color: #555; position: absolute; bottom: 0px; display: none;">
+        &lt;button onClick="okClick()">ok&lt;/button>
+        &lt;button onClick="cancelClick()" style="margin-left: 100px;">cancel&lt;/button>
+    &lt;/div>
+&lt;/div>
+&lt;button id="btn-grab" style="margin-left: 400px; display: block;" onClick="onBtnGrabClick()">Grab a Snapshot&lt;/button>
+&lt;br />
+&lt;button id="btn-showVideo" style="margin-left: 400px; display: none;" style="display:none;" onclick="onBtnShowVideoClick()">
+Show Video
+&lt;/button>
+&lt;script type="text/javascript" src="DCSResources/dynamsoft.camera.config.js"> &lt;/script> 
+&lt;script type="text/javascript" src="DCSResources/dynamsoft.camera.initiate.js"> &lt;/script> 
+&lt;script src="Scripts/script.js">&lt;/script>
+&lt;/body>
+&lt;/html>
+</pre>
+</body>
+</html>
