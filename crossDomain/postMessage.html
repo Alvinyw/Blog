@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#b { padding:10px; margin-top:15px; border:2px solid #fe8e14; font-weight:bold; color:#444;}
+</style>
+</head>
+
+<body>
+<div>我是 iframe 内嵌页面</div>
+<div id="b">主页面发过来的信息会显示在这里</div>
+<script>
+var onmessage = function (event) {  
+  var data = event.data;//消息  
+  var origin = event.origin;//消息来源地址  
+  var source = event.source;//源 Window 对象  
+  if(origin=="http://192.168.8.89"){  
+	document.getElementById("b").innerHTML = data;
+	
+	//发消息 
+    source.postMessage('我收到信息啦！', origin);  
+  }  
+
+};  
+
+if (typeof window.addEventListener != 'undefined') {  
+
+  window.addEventListener('message', onmessage, false);  
+
+} else if (typeof window.attachEvent != 'undefined') {  
+
+  //for ie  
+  window.attachEvent('onmessage', onmessage);  
+
+}  
+</script>
+</body>
+</html>

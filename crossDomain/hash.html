@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="a">接受 parent 页面发送的消息</div>
+<script>
+//监听 hash 变化
+window.onhashchange = checkMessage;
+
+function checkMessage() {
+  var message = window.location.hash;
+  document.getElementById('a').innerHTML = message;
+  
+  switch(message)
+	{
+	case '#Click to send the first message':
+	  parent.location.href = 'http://192.168.8.89/training/kuayu/hash.html#received-first';
+	  break;
+	case '#Click to send the second message':
+	  parent.location.href = 'http://192.168.8.89/training/kuayu/hash.html#received-second';
+	  break;
+	case '#Click to send the thrid message':
+	  parent.location.href = 'http://192.168.8.89/training/kuayu/hash.html#received-thrid';
+	  break;
+	default:
+	  parent.location.href = 'http://192.168.8.89/training/kuayu/hash.html#received';
+	}  
+}
+</script>
+</body>
+</html>
