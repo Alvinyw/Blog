@@ -7,3 +7,8 @@
 <a target="_blank" href="http://alvinwp.com/">http://alvinwp.com/</a>
 
 ## 搭建了新的 Blog 站点之后，这个静态博客站点就被用来放一些 Demo
+
+## 文件目录
+
+1、CodeHighlight：代码高亮插件 Demo
+2、crossDomain：跨域 Demo
