@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="x-UA-Compatible" content="Edge">
-		<meta http-equiv="ContentType" content="text/html;charset=utf-8">
-		<title>Preview by fsjohnhuang</title>
-		<style type="text/css">
-			.preview{
-				
-			}
-		</style>
-	</head>
-	<body>
-		<input type="file" id="loadPng" accept="image/x-png"/>&nbsp;<button onclick="pv1.reset()">重置</button>
-		<div class="preview" id="pv1">
-		</div>
-		<input type="file" id="loadJpg" accept="image/jpg"/>&nbsp;<button onclick="pv2.reset()">重置</button>
-		<div class="preview" id="pv2">
-		</div>
-		<script type="text/javascript" src="./picturePreview.js"></script>
-		<script type="text/javascript">
+<head>
+<meta http-equiv="x-UA-Compatible" content="Edge">
+<meta http-equiv="ContentType" content="text/html;charset=utf-8">
+<title>pacturePreview</title>
+</head>
+<body>
+<input type="file" id="loadPng" accept="image/x-png"/>
+&nbsp;
+<button onclick="pv1.reset()">重置</button>
+<div class="preview" id="pv1"> </div>
+<input type="file" id="loadJpg" accept="image/jpg"/>
+&nbsp;
+<button onclick="pv2.reset()">重置</button>
+<div class="preview" id="pv2"> </div>
+<script type="text/javascript" src="picturePreview.js"></script> 
+<script type="text/javascript">
 	  		var get = function(id){
 			  	return document.getElementById(id);
 		    };
@@ -39,5 +36,5 @@
 		    });
 		    var pv2 = new Preview(get('pv2'), get('loadJpg'));
 		</script>
-	</body>
+</body>
 </html>
