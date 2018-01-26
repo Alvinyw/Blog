@@ -14,3 +14,4 @@
 #### 2. [crossDomain](https://github.com/Alvinyw/crossDomain)：跨域 Demo
 #### 3. [pacturePreview](https://github.com/Alvinyw/pacturePreview)：前端实现图片预览
 #### 4. [scrollToTop](https://github.com/Alvinyw/scrollToTop)：点击滚动到页面顶部
+#### 5. [easyTooltip](https://alvinyw.github.io/Blog/easyTooltip/easyTooltip.html)
