@@ -25,8 +25,8 @@
                 if (content != "" && content != undefined){        
                     $("body").append("<div id='"+ options.tooltipId +"' class='" + options.tooltipClass + "'>"+ content +"<span class='arw'></span></div>");    
                     $("#" + options.tooltipId)
-                        .css({"position":"absolute","display":"none","padding":"10px 15px","background-color":"#aaa","font-size":"14px","line-height":"24px","color":"#000","opacity":"0.9","border-radius":"4px"}).fadeIn("fast");
-					$("#" + options.tooltipId + " .arw").css({"display":"inline-block","position":"absolute","width":"10px","height":"10px","background-color":"#aaa","-webkit-transform":"rotate(45deg)","-moz-transform":"rotate(45deg)","-o-transform":"rotate(45deg)","-ms-transform":"rotate(45deg)","transform":"rotate(45deg)"});
+                        .css({"position":"absolute","z-index":"10000","display":"none","padding":"10px 15px","background-color":"#aaa","font-size":"14px","line-height":"24px","color":"#000","opacity":"0.9","border-radius":"4px"}).fadeIn("fast");
+					$("#" + options.tooltipId + " .arw").css({"display":"inline-block","position":"absolute","z-index":"10000","width":"10px","height":"10px","background-color":"#aaa","-webkit-transform":"rotate(45deg)","-moz-transform":"rotate(45deg)","-o-transform":"rotate(45deg)","-ms-transform":"rotate(45deg)","transform":"rotate(45deg)"});
 					
 					//设置 tooltip 的位置
 					updatePosition(e);
