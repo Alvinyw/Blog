@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ds-select</title>
+<link type="text/css" rel="stylesheet" href="font-awesome.min.css"/>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="DsSelect.min.js"></script>
+<style>
+#DropDown { width: 80%; }
+div[class*=selectWrapper], div[id*=selectWrapper] { margin: 30px !important; width: 300px !important; }
+div[class*=content] { margin: 30px !important; padding: 15px !important; border: 1px solid #ddd; }
+.item { margin-bottom: 70px; }
+</style>
+</head>
+
+<body>
+<div id="DropDown">
+    <div class="item">
+        <h2>1、默认用法（插件全部元素和 class 取默认值）</h2>
+        <div class="selectWrapper">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"></span></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content on"> Option 1 </div>
+        <div class="content"> Option 2 </div>
+        <div class="content"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>2、将 select 元素由 ul 换成 div 或其他</h2>
+        <div class="selectWrapper2">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"></span></div>
+            <div class="selectNode">
+                <div class="on">Option 1</div>
+                <div>Option 2</div>
+                <div>Option 3</div>
+            </div>
+        </div>
+        <div class="content2 on"> Option 1 </div>
+        <div class="content2"> Option 2 </div>
+        <div class="content2"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>3、将插件所有元素的 class 改成 id</h2>
+        <div id="selectWrapper3">
+            <div id="toggleNode"><span id="curOptionText">Option 1</span><span id="icon"></span></div>
+            <ul id="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content3 on"> Option 1 </div>
+        <div class="content3"> Option 2 </div>
+        <div class="content3"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>4、插件全部元素的 class 都不用默认值</h2>
+        <div class="selectWrapper4">
+            <div class="aa"><span class="bb">Option 1</span><span class="cc"></span></div>
+            <ul class="dd">
+                <li class="ee">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content4 ii"> Option 1 </div>
+        <div class="content4"> Option 2 </div>
+        <div class="content4"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>5、将 toggleNode 的子元素的 class 去掉</h2>
+        <div class="selectWrapper5">
+            <div class="toggleNode"><span>Option 1</span><i></i></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content5 on"> Option 1 </div>
+        <div class="content5"> Option 2 </div>
+        <div class="content5"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>6、将下拉小三角改为 font-awesome 的下拉箭头</h2>
+        <div class="selectWrapper6">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content6 on"> Option 1 </div>
+        <div class="content6"> Option 2 </div>
+        <div class="content6"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>7、改变插件边框颜色和倒角</h2>
+        <div class="selectWrapper7">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"></span></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content7 on"> Option 1 </div>
+        <div class="content7"> Option 2 </div>
+        <div class="content7"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>8、改变绑定点击事件的节点 toggleNode 的样式</h2>
+        <div class="selectWrapper8">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"></span></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content8 on"> Option 1 </div>
+        <div class="content8"> Option 2 </div>
+        <div class="content8"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>9、改变 select 下 option 的样式</h2>
+        <div class="selectWrapper9">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"></span></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content9 on"> Option 1 </div>
+        <div class="content9"> Option 2 </div>
+        <div class="content9"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>10、改变 toggleNode 下 icon 的样式</h2>
+        <div class="selectWrapper10">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"></span></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content10 on"> Option 1 </div>
+        <div class="content10"> Option 2 </div>
+        <div class="content10"> Option 3 </div>
+    </div>
+    <div class="item">
+        <h2>11、改变 select 的下拉速度</h2>
+        <div class="selectWrapper11">
+            <div class="toggleNode"><span class="curOptionText">Option 1</span><span class="icon"></span></div>
+            <ul class="selectNode">
+                <li class="on">Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+        <div class="content11 on"> Option 1 </div>
+        <div class="content11"> Option 2 </div>
+        <div class="content11"> Option 3 </div>
+    </div>
+</div>
+</body>
+<script>
+(function ($) {
+//1、默认用法（插件全部元素和 class 取默认值）
+$(".selectWrapper").DsSelect();
+
+//2、将 select 元素由 ul 换成 div 或其他
+$(".selectWrapper2").DsSelect({
+	_selectWrapper: ".selectWrapper2",
+	_controlContent: ".content2",
+	
+	_optionNode: "div"
+});
+
+//3、将插件所有元素的 class 改成 id
+$("#selectWrapper3").DsSelect({
+	_selectWrapper: "#selectWrapper3",
+	_controlContent: ".content3",
+	
+	_toggleNode: "#toggleNode",
+	_currentText: "#curOptionText",
+	_iconNode: "#icon", 
+	_selectNode: "#selectNode"
+});
+
+//4、插件全部元素的 class 都不用默认值
+$(".selectWrapper4").DsSelect({
+	_selectWrapper: ".selectWrapper4",
+	_controlContent: ".content4",
+	
+	_toggleNode: ".aa",
+	_currentText: ".bb",
+	_iconNode: ".cc", 
+	_selectNode: ".dd", 
+	_currentOptionClass: "ee",
+	_currentSelectClass: "ff",
+	_toggleNodeClass: "gg",
+	_toggleIconClass: "hh",
+	_currentContentClass: "ii"
+});
+
+//5、将 toggleNode 的子元素的 class 去掉
+$(".selectWrapper5").DsSelect({
+	_selectWrapper: ".selectWrapper5",
+	_controlContent: ".content5",
+	
+	_currentText: "span",
+	_iconNode: "i"
+});
+
+//6、将下拉小三角改为 font-awesome 的下拉箭头
+$(".selectWrapper6").DsSelect({
+	_selectWrapper: ".selectWrapper6",
+	_controlContent: ".content6",
+	
+	_toggleIconText: "<i class='fa fa-angle-up' aria-hidden='true'></i>"
+});
+
+//7、改变插件边框颜色和倒角
+$(".selectWrapper7").DsSelect({
+	_selectWrapper: ".selectWrapper7",
+	_controlContent: ".content7",
+	
+	_borderColor: "#fe8d14",
+	_borderRadius: "6px"
+});
+
+//8、改变绑定点击事件的节点 toggleNode 的样式
+$(".selectWrapper8").DsSelect({
+	_selectWrapper: ".selectWrapper8",
+	_controlContent: ".content8",
+	
+	_toggleNodeFontSize: "18px",
+	_toggleNodeFontColor: "#fe8e14",
+	_toggleNodeHeight: "58px",
+	_toggleNodePadding: "0 30px 0 30px"
+});
+
+//9、改变 select 下 option 的样式
+$(".selectWrapper9").DsSelect({
+	_selectWrapper: ".selectWrapper9",
+	_controlContent: ".content9",
+	
+	_optionFontSize: "18px",
+	_optionLineHeight: "48px",
+	_optionFontColor: "#000",
+	_optionHoverBgColor: "#fe8e14",
+	_optionCurBgColor: "green"
+});
+
+//10、改变 toggleNode 下 icon 的样式
+$(".selectWrapper10").DsSelect({
+	_selectWrapper: ".selectWrapper10",
+	_controlContent: ".content10",
+	
+	_iconPositionRight: "20px",
+	_iconColor: "#fe8e14",
+	_iconBorderWidth: "8px",
+	_iconFontSize: "14px"
+});
+
+//11、改变 select 的下拉速度
+$(".selectWrapper11").DsSelect({
+	_selectWrapper: ".selectWrapper11",
+	_controlContent: ".content11",
+	
+	_switchSpeed: "fast"
+});
+
+})(jQuery);
+
+
+
+</script>
+</html>
