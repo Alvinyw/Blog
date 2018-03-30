@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>easyTooltip</title>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="easyTooltip.min.js"></script>
+<style>
+#main { width: 1000px; margin: 20px auto; }
+h2 { margin-top: 60px; }
+h3 { margin-top: 40px; }
+.item { width: 150px; height: 50px; line-height: 48px; background: #ddd; text-align: center; }
+</style>
+</head>
+
+<body>
+<div id="main">
+    <div id="existedContentId">I am already existing content.</div>
+    <h2>Tooltip 跟随鼠标移动</h2>
+    <h3>1、默认用法（Tooltip 出现在上侧）</h3>
+    <div id="test1" class="item">Hover Me!</div>
+    <h3>2、Tooltip 出现在右侧</h3>
+    <div id="test2" class="item">Hover Me!</div>
+    <h3>3、Tooltip 出现在下侧</h3>
+    <div id="test3" class="item">Hover Me!</div>
+    <h3>4、Tooltip 出现在左侧</h3>
+    <div id="test4" class="item">Hover Me!</div>
+    <h3>5、existedContentId 属性的使用</h3>
+    <div id="test5" class="item">Hover Me!</div>
+    <h3>6、clickRemove 属性的使用</h3>
+    <div id="test6" class="item">Hover Me!</div>
+    <h3>7、xOffset/yOffset 属性的使用</h3>
+    <div id="test7" class="item">Hover Me!</div>
+    <h3>8、Tooltip 样式属性的使用</h3>
+    <div id="test8" class="item">Hover Me!</div>
+    <h2>Tooltip 相对固定</h2>
+    <h3>9、Tooltip 固定在上侧</h3>
+    <div id="test9" class="item">Hover Me!</div>
+    <h3>10、Tooltip 固定在右侧</h3>
+    <div id="test10" class="item">Hover Me!</div>
+    <h3>11、Tooltip 固定在下侧</h3>
+    <div id="test11" class="item">Hover Me!</div>
+    <h3>12、Tooltip 固定在左侧</h3>
+    <div id="test12" class="item">Hover Me!</div>
+    <h3>13、改变 Tooltip 小三角的大小</h3>
+    <div id="test13" class="item">Hover Me!</div>
+</div>
+<script type="text/javascript">
+$("#test1").easyTooltip({
+	//tooltipDir: "top",//默认是 top
+	content: "<span style='color:#fe8e14;'>I am </span><span style='color:red;'>a sample.</span>"
+});
+
+$("#test2").easyTooltip({
+	tooltipDir: "right",
+	content: "I am a sample.",
+	tooltipPosition: ''
+});
+
+$("#test3").easyTooltip({
+	tooltipDir: "bottom",
+	content: "I am a sample.",
+	tooltipPosition: 'absolute'
+});
+
+$("#test4").easyTooltip({
+	tooltipDir: "left",
+	content: "I am a sample."
+});
+
+$("#test5").easyTooltip({
+	content: "Test Content.",/*设置了也没用，会被 $('#existedContentId').html() 替换*/
+	existedContentId: "existedContentId"
+});
+
+$("#test6").easyTooltip({
+	content: "I am a sample.",
+	clickRemove: true //触发 click 时间之后 Tooltip 会隐藏
+});
+
+$("#test7").easyTooltip({
+	xOffset: 100,     
+    yOffset: 100,
+	tooltipDir: "right",
+	content: "I am a sample."
+});
+
+$("#test8").easyTooltip({
+	content: "I am a sample.",
+	/************ tooltip 样式参数 ************/
+	defaultRadius: "10px",
+	tooltipZindex: 10000,
+	tooltipPadding: "20px 30px",
+	tooltipBgColor: "rgba(0,0,0,0.7)",
+	tooltipFtSize: "18px",
+	tooltipLineHeight: "27px",
+	tooltipFtColor: "#fe8e14",
+	tooltipOpacity: 1,
+	tooltipArwBorderWidth: 10
+});
+
+//Tooltip 相对固定
+$("#test9").easyTooltip({
+	tooltipPosition: 'relative',
+	//tooltipDir: "top",
+	content: "I am a sample."
+});
+
+$("#test10").easyTooltip({
+	tooltipPosition: 'relative',
+	tooltipDir: "right",
+	content: "I am a sample."
+});
+
+$("#test11").easyTooltip({
+	tooltipPosition: 'relative',
+	tooltipDir: "bottom",
+	content: "I am a sample."
+});
+
+$("#test12").easyTooltip({
+	tooltipPosition: 'relative',
+	tooltipDir: "left",
+	content: "I am a sample."
+});
+
+$("#test13").easyTooltip({
+	tooltipPosition: 'relative',
+	content: "I am a sample.",
+	/************ tooltip 样式参数 ************/
+	tooltipArwBorderWidth: 12
+});
+</script>
+</body>
+</html>
