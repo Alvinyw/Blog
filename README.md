@@ -14,5 +14,6 @@
 #### 2. [crossDomain](https://github.com/Alvinyw/crossDomain)：跨域 Demo
 #### 3. [picturePreview](https://github.com/Alvinyw/picturePreview)：前端实现图片预览
 #### 4. [scrollToTop](https://github.com/Alvinyw/scrollToTop)：点击滚动到页面顶部
-#### 5. [DsTooltip](https://github.com/Alvinyw/DsTooltip): 鼠标移上去出现提示内容
-#### 6. [DsSelect](https://github.com/Alvinyw/DsSelect): Div + Css 模拟的兼容各大主流浏览器的 select 下拉列表
+#### 5. [GitBook](https://github.com/Alvinyw/GitBook)：用 gitbook 搭建一个用来管理文档的站点
+#### 6. [DsTooltip](https://github.com/Alvinyw/DsTooltip): 鼠标移上去出现提示内容
+#### 7. [DsSelect](https://github.com/Alvinyw/DsSelect): Div + Css 模拟的兼容各大主流浏览器的 select 下拉列表
