@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="scrollToTop.min.js"></script>
+<title>scrollToTop</title>
+<style>
+body, html { height: 100%; }
+.item { height: 50%; }
+.a { background: #111; }
+.b { background: #222; }
+.c { background: #333; }
+.d { background: #444; }
+.e { background: #555; }
+.f { background: #666; }
+.g { background: #777; }
+.h { background: #888; }
+.i { background: #999; }
+</style>
+</head>
+
+<body>
+<div class="item a"></div>
+<div class="item b"></div>
+<div class="item c"></div>
+<div class="item d"></div>
+<div class="item e"></div>
+<div class="item f"></div>
+<div class="item g"></div>
+<div class="item h"></div>
+<div class="item i"></div>
+<script>
+/* 调用 UItoTop 方法 */
+$(function () {
+    $(document).scrollToTop({
+		/********** 标签属性设置 **********/
+		targetNodeID: "scrollToTop",/* 绑定 scrollTop 事件的元素（targetNode） id */
+		targetNodeClass: "scrollToTop",/* 绑定 scrollTop 事件的元素（targetNode） class */
+		targetNodeHoverClass: "on",/* 鼠标 hover 时 targetNode 新增的 class */
+		targetNodeText: "",/* targetNode 的文本，可以填入 html 字段 */
+		targetNodeTitle: "Back to Top",/* targetNode 的文本 */
+		minScrollTop: 200,/* 向下滚动 minScrollTop 高度时出现图标 */
+		inDelay: 600,/* 图标出现时的延时 */
+		outDelay: 400,/* 图标消失时的延时 */
+		scrollSpeed: 1200,/* 上升时间 - 数值越大越慢 */
+		scrollToWhere: 0,/* 滚动到距离页面顶端 scrollToWhere 的地方 */
+		easingType: "easeOutQuart",/* scroll 的轨迹（easeInQuart/easeOutQuart/easeInOutQuart）*/
+		/********** 样式属性设置 **********/
+		targetNodeWidth: "50", /* targetNode 默认宽度 */
+		targetNodeHeight: "50", /* targetNode 默认高度 */
+		targetNodePsBottom: "5%", /* targetNode 默认里底部的位置 */
+		targetNodePsRight: "2%", /* targetNode 默认里顶部的位置 */
+		targetNodeMgTop: "", /* targetNode 默认的 margin-top */
+		targetNodeMgRight: "", /* targetNode 默认的 margin-right */
+		targetNodeBgColor: "#ddd", /* targetNode 默认的背景色 */
+		targetNodeFtColor: "#666", /* targetNode 默认的字体颜色 */
+		targetNodeHoverBgColor: "#ccc", /* targetNode 默认 hover 状态的背景色 */
+		targetNodeHoverFtColor: "#444", /* targetNode 默认 hover 状态的字体颜色 */
+		targetNodeBrRadius: "50%", /* targetNode 默认的倒角 */
+		targetNodeOpacity: 1, /* targetNode 默认的透明度 */
+		targetNodeHoverOpacity: 1, /* targetNode 默认的 hover 状态的透明度 */
+		/********** targetNode 里 icon（利用 border 画出的小三角）样式 **********/
+		targetIconBrWidth: 8, /* targetNode 里 icon 的边框粗细 */
+		targetIconBrColor: "#aaa" /* targetNode 里 icon 的边框颜色 */
+	});
+});
+</script>
+</body>
+</html>
