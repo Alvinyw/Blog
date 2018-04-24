@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CodeHighlight Demo 一</title>
+<title>CodeHighlight Demo 二</title>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="CodeHighlight.min.js"></script>
 <style>
@@ -57,8 +57,17 @@ Show Video
 </div>
 <script>
 $(function(){
-	//插件调用
-	$().codeHighlight();
+	// 插件调用
+	$().codeHighlight({
+		//特殊的 element 样式
+		jsColor: "#d10303",
+		cssColor: "#f408af",
+		metaColor: "#c1ad04",
+		//特殊的 attribute 样式
+		idColor: "#fe8e14",
+		claColor: "green",
+		styColor: "pink"
+	});
 });
 </script>
 </body>

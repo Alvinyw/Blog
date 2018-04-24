@@ -1,7 +1,0 @@
-/*CodeHighlight*/
-#CodeHighlight { padding: 15px; margin: 15px auto; border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5; font-size: 13px; line-height: 28px; overflow:auto; }
-#CodeHighlight span { }
-#CodeHighlight span.keyword { color: #006699 !important; font-weight: bold !important; }
-#CodeHighlight span.color1 { color: gray !important; }
-#CodeHighlight span.string { color: blue !important; }
-#CodeHighlight span.plain { color: #333 !important; }
