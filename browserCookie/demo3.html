@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>日期 cookie</title>
+<script src="jquery.min.js"></script>
+<script src="browserCookie.min.js"></script>
+<script type="text/javascript">
+function checkCookie(){
+	var exdate = new Date();
+		//exdate = exdate.toGMTString(); //根据格林威治时间 (GMT) 把 Date 对象转换为字符串，并返回结果
+	if($.getCookie('LastVisitTime')!=null&&$.getCookie('LastVisitTime')!=""){
+		alert('Your last visit was on ' + $.getCookie('LastVisitTime') + '!')
+	}else{
+		alert("You are visiting our website for the first time")
+	}
+	$.setCookie('LastVisitTime',exdate,365,'/');
+}
+</script>
+</head>
+<body onLoad="checkCookie()">
+</body>
+</html>

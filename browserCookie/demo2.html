@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>密码 cookie</title>
+<style>
+#desc { display:none; padding:15px; width:300px; border:1px solid #ccc; font-size:14px;}
+#tempName, #tempPsw { font-weight:bold; color:#fe8e14;}
+</style>
+<script src="jquery.min.js"></script>
+<script src="browserCookie.min.js"></script>
+<script type="text/javascript">
+function init(){
+	var username = $.getCookie('username'),
+	    password = $.getCookie('password');
+	
+	//更新 name
+	if (username!=null && username!=""){
+		$("#name").val(username);
+		$("#desc").show();
+		$("#tempName").html(username);
+	}
+	
+	//更新 password
+	if (password!=null && password!=""){
+		$("#password").val(password);
+		$("#desc").show();
+		$("#tempPsw").html(password);
+	}
+	
+}
+function operateCookie(){
+	var username = $("#name").val();
+	if (username!=null && username!=""){
+		$.setCookie('username',username,365);
+	}
+	$("#name").val("")
+	
+	//判断/更新 password
+	var password = $("#password").val();
+	if (password!=null && password!=""){
+		$.setCookie('password',password,365);
+	}
+	$("#password").val("");
+	
+	$("#desc").hide();
+}
+</script>
+</head>
+<body onload="init()">
+<p>填写你的名字：</p>
+<input type="text" id="name" placeholder="name"/>
+<p>填写你的密码：</p>
+<input type="text" id="password" placeholder="password"/><br/><br/>
+<input type="button" value="提交" onclick="operateCookie()"/><br/><br/>
+<div id="desc">
+<p>您上次填写的用户名和密码为：</p>
+<p>User Name: <span id="tempName"></span></p>
+<p>Password: <span id="tempPsw"></span></p>
+<p>已为你自动填写在表单相应位置。</p>
+</div>
+</body>
+</html>

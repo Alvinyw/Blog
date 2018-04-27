@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>访问浏览器的次数</title>
+<style>
+#cookieContent { font-size:40px; color:#fe8e14;}
+</style>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="browserCookie.min.js"></script>
+</head>
+
+<body>
+<h2>你是第 <strong><span id="cookieContent">0</span></strong> 次访问我们网站。</h2>
+<script type="text/javascript">
+var views = $.getCookie("views");
+if(!views){
+	document.getElementById("cookieContent").innerHTML = 1;
+	alert("We use cookies to study how our website is being used. You consent to our cookies if you continue to use this website.");
+	views = 1;
+}else {
+	views = parseInt(views)+1;
+}
+$.setCookie("views",views,365,'/');
+document.getElementById("cookieContent").innerHTML = $.getCookie("views");
+</script>
+</body>
+</html>
