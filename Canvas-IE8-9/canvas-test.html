@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>实现 Canvas 在 IE6-8 上的兼容</title>
+<!--[if lte IE 8]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+<style type="text/css">
+#canvasWrapper { position:relative;}
+#canvas2 { position:absolute; top:0; left:0;}
+</style>
+</head>
+
+<body>
+<div id="canvasWrapper">
+	<canvas id="canvas" width="600" height="600" style="border:solid black 2px;"></canvas><br/>
+	<canvas id="canvas2" width="600" height="600" style="border:solid black 2px;"></canvas><br/>
+</div>
+<p>鼠标起始点坐标：<span id="a">0</span> - <span id="b">0</span></p>
+<p>鼠标实时坐标：<span id="c">0</span> - <span id="d">0</span></p>
+<br/>
+<p>测试的 Canvas Api 中<strong>兼容 IE6-8</strong> 的有：getContext()、drawImage()、strokeRect()、clearRect()、moveTo()、lineTo()、strokeStyle、lineWidth</p>
+<p>测试的 Canvas Api 中<strong>不兼容 IE6-8</strong> 的有：setLineDash</p>
+<br/>
+<p>Demo 兼容移动端；</p>
+</body>
+
+<script type="text/javascript"> 
+window.onload = function(){
+	
+	function canvasFuc(canvasID1,canvasID2){
+		var _this = this;
+		var cvs = this.cvs = document.getElementById(canvasID2);
+		var ctx = this.ctx = cvs.getContext('2d');
+		
+		this._startPos = {};		
+		this.addEvent("touchstart", fuc_touchstart);
+		this.addEvent("touchmove", fuc_touchmove);
+		this.addEvent("touchend", fuc_touchend);
+		
+		this.addEvent("mousedown", fuc_touchstart);
+		this.addEvent("mouseup", fuc_touchend);
+		this.addEvent("mouseleave", fuc_touchend);
+				
+		function fuc_touchstart(event){
+			var ev = event || window.event;
+			_this.stopDefault(ev);
+						
+			_this.addEvent("mousemove", fuc_touchmove);
+	
+			var touches = event.changedTouches;
+	
+			if(touches){
+				//Multi-contact is prohibited
+				if(touches.length!=1){return false;}
+	
+				_this._startPos = {
+					startX: touches[0].pageX,
+					startY: touches[0].pageY
+				}
+			}else{
+				_this._startPos = {
+					startX: ev.clientX,
+					startY: ev.clientY
+				}
+			}
+			
+			document.getElementById('a').innerHTML = _this._startPos.startX;
+			document.getElementById('b').innerHTML = _this._startPos.startY;
+	
+		} 
+	
+		function fuc_touchmove(event){
+			var ev = event || window.event;
+			//ev.preventDefault();
+			_this.stopDefault(ev);
+			
+			cvs.style.cursor = 'crosshair';
+			
+			ctx.clearRect(0,0,600,600);
+			ctx.strokeStyle = 'red';
+			ctx.lineWidth = 2;
+			//ctx.setLineDash([5,15]);
+			
+			var touches = ev.changedTouches;
+	
+			if(touches){
+				ctx.strokeRect(_this._startPos.startX, _this._startPos.startY, (touches[0].pageX - _this._startPos.startX), (touches[0].pageY - _this._startPos.startY));
+				
+				document.getElementById('c').innerHTML = touches[0].pageX;
+				document.getElementById('d').innerHTML = touches[0].pageY;
+			}else{
+				ctx.strokeRect(_this._startPos.startX, _this._startPos.startY, (ev.clientX - _this._startPos.startX), (ev.clientY - _this._startPos.startY));
+				
+				document.getElementById('c').innerHTML = ev.clientX;
+				document.getElementById('d').innerHTML = ev.clientY;
+			}
+
+		}
+	
+		function fuc_touchend(event){
+			var ev = event || window.event;
+			_this.stopDefault(ev);
+			
+			cvs.style.cursor = 'default';
+			
+			_this.removeEvent("mousemove", fuc_touchmove);
+	
+		}
+		
+		this.init(canvasID1);
+		
+	}
+	
+	canvasFuc.prototype.init = function(canvasID){
+		//一、测试 drawImage()
+		var img = new Image();
+		img.onload = function(){
+			var cvs = document.getElementById(canvasID);
+			var ctx = cvs.getContext('2d');
+			ctx.drawImage(img,0,0,600,600);
+			
+			/*ctx.beginPath();
+			ctx.moveTo(0,0);
+			ctx.lineTo(300,150);
+			ctx.stroke();*/
+			
+		}
+		img.src = "https://www.dynamsoft.com/assets/images/dbr-sdk-android-support-illus.png";
+		
+	}
+	
+	canvasFuc.prototype.addEvent = function(type,handle){
+		this.cvs.addEventListener ? this.cvs.addEventListener(type,handle,false) : this.cvs.attachEvent("on"+type,handle);
+	}
+	
+	canvasFuc.prototype.removeEvent = function(type,handle){
+		this.cvs.removeEventListener ? this.cvs.removeEventListener(type,handle,false) : this.cvs.detachEvent("on"+type,handle); 
+	}
+	
+	canvasFuc.prototype.stopDefault = function(e){
+		if ( e && e.preventDefault ){ 
+			e.preventDefault();
+		} else { 
+			window.event.returnValue = false;
+		}
+	}
+	
+	var canvasIE = new canvasFuc('canvas','canvas2');
+	
+}
+
+
+</script>
+</html>
