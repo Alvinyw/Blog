@@ -18,14 +18,31 @@
 <p>鼠标起始点坐标：<span id="a">0</span> - <span id="b">0</span></p>
 <p>鼠标实时坐标：<span id="c">0</span> - <span id="d">0</span></p>
 <br/>
-<p>测试的 Canvas Api 中<strong>兼容 IE6-8</strong> 的有：getContext()、drawImage()、strokeRect()、clearRect()、moveTo()、lineTo()、strokeStyle、lineWidth</p>
-<p>测试的 Canvas Api 中<strong>不兼容 IE6-8</strong> 的有：setLineDash</p>
+<p>Canvas Api 中<strong>兼容 IE6-8</strong> 的方法有：getContext()、beginPath()、drawImage()、createLinearGradient()、stroke()、strokeRect()、fill()、fillRect()、fillText()、clearRect()、moveTo()、lineTo()、strokeText()</p>
+<p>Canvas Api 中<strong>兼容 IE6-8</strong> 的属性有：strokeStyle、lineWidth、fillStyle、font、globalAlpha、textAlign</p>
+<p>Canvas Api 中<strong>不兼容 IE6-8</strong> 的方法和属性有：setLineDash、getImageData()、putImageData()</p>
 <br/>
-<p>Demo 兼容移动端；</p>
+<button onclick="copy()">将 canvas3 的图像复制到 canvas4</button><br/>
+canvas3<br/>
+<canvas id="canvas3" width="100" height="100" style="border:solid black 2px;"></canvas><br/>
+canvas4<br/>
+<canvas id="canvas4" width="100" height="100" style="border:solid black 2px;"></canvas><br/>
 </body>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
+var imgData;
+function copy(){	
+	var cvs4 = document.getElementById("canvas4");
+	var ctx4 = cvs4.getContext('2d');
+	//ctx4.putImageData(imgData,0,0);
+}
+	
 window.onload = function(){
+	var cvs3 = document.getElementById("canvas3");
+	var ctx3 = cvs3.getContext('2d');
+	ctx3.fillStyle="green";
+	ctx3.fillRect(10,10,80,80);
+	//imgData = ctx3.getImageData(0,0,600,600);
 	
 	function canvasFuc(canvasID1,canvasID2){
 		var _this = this;
@@ -77,6 +94,7 @@ window.onload = function(){
 			cvs.style.cursor = 'crosshair';
 			
 			ctx.clearRect(0,0,600,600);
+			ctx.beginPath();
 			ctx.strokeStyle = 'red';
 			ctx.lineWidth = 2;
 			//ctx.setLineDash([5,15]);
@@ -119,10 +137,78 @@ window.onload = function(){
 			var ctx = cvs.getContext('2d');
 			ctx.drawImage(img,0,0,600,600);
 			
+			//测试beginPath、 moveTo、lineTo、stroke
 			/*ctx.beginPath();
 			ctx.moveTo(0,0);
 			ctx.lineTo(300,150);
 			ctx.stroke();*/
+			
+			//测试 createLinearGradient、addColorStop、fillStyle、fillRect
+			/*var grd=ctx.createLinearGradient(0,0,170,0);
+			grd.addColorStop(0,"black");
+			grd.addColorStop(1,"white");
+			ctx.fillStyle=grd;
+			ctx.fillRect(20,20,150,100);*/
+			
+			//测试 font、fillText
+			/*ctx.font="20px Georgia";
+			ctx.fillText("Hello World!",10,50);
+			
+			ctx.font="30px Verdana";
+			// 创建渐变
+			var gradient=ctx.createLinearGradient(0,0,600,0);
+			gradient.addColorStop("0","magenta");
+			gradient.addColorStop("0.5","blue");
+			gradient.addColorStop("1.0","red");
+			// 用渐变填色
+			ctx.fillStyle=gradient;
+			ctx.fillText("w3school.com.cn",10,90);*/
+			
+			//测试 globalAlpha
+			/*ctx.fillStyle="red";
+			ctx.fillRect(20,20,75,50);
+			// 调节透明度
+			ctx.globalAlpha=0.2;
+			ctx.fillStyle="blue";
+			ctx.fillRect(50,50,75,50);
+			ctx.fillStyle="green";
+			ctx.fillRect(80,80,75,50);*/
+			
+			//测试 strokeText
+			/*ctx.font="20px Georgia";
+			ctx.strokeText("Hello World!",10,50);
+			
+			ctx.font="30px Verdana";
+			// 创建渐变
+			var gradient=ctx.createLinearGradient(0,0,600,0);
+			gradient.addColorStop("0","magenta");
+			gradient.addColorStop("0.5","blue");
+			gradient.addColorStop("1.0","red");
+			// 用渐变填色
+			ctx.strokeStyle=gradient;
+			ctx.strokeText("w3school.com.cn",10,90);*/
+			
+			//测试 textAlign
+			// 在位置 150 创建蓝线
+			/*ctx.strokeStyle="blue";
+			ctx.moveTo(150,20);
+			ctx.lineTo(150,170);
+			ctx.stroke();
+			
+			ctx.font="15px Arial";
+			
+			// 显示不同的 textAlign 值
+			ctx.textAlign="start";
+			ctx.fillText("textAlign=start",150,60);
+			ctx.textAlign="end";
+			ctx.fillText("textAlign=end",150,80);
+			ctx.textAlign="left";
+			ctx.fillText("textAlign=left",150,100);
+			ctx.textAlign="center";
+			ctx.fillText("textAlign=center",150,120);
+			ctx.textAlign="right";
+			ctx.fillText("textAlign=right",150,140);*/
+
 			
 		}
 		img.src = "https://www.dynamsoft.com/assets/images/dbr-sdk-android-support-illus.png";
