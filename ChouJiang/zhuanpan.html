@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基层党建大转盘</title>
+<style type="text/css">
+body { font-size: 12px; /*background: #920903;*/ background-color: #ddd; }
+* { margin: 0; padding: 0; }
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+h1 { margin:20px;}
+img { border: 0 }
+#content { display: inline-block; width: 100%; max-width: 950px; max-height: 950px; margin: 20px 20px 0; position: relative; overflow: hidden; }
+#zhuanpan { display: block; max-width: 100%; height: auto; }
+#tip { position: absolute; left: 50%; top: 50%; width: 12.9%; height: 19.7%; margin: -13.05% 0 0 -6.6%; cursor: pointer; transform: rotate(-3deg); }
+#result { display: inline-block; margin: 50px 20px 20px; vertical-align: top; }
+#result .item { border: 1px solid #aaa; border-radius: 4px; padding: 10px 20px; margin-bottom: 20px; min-width: 400px; background: #fff; }
+#result .item p { margin-bottom: 15px; font-size: 16px; line-height: 26px; color: #444; }
+#result .item p:nth-child(2n) { margin-bottom: 5px; }
+#result .item p:last-child { margin-bottom: 0; }
+#result .item p .jz { font-size: 20px; font-weight: bold; color: #000; }
+#result .item p .cz, #result .item p .sq { font-weight: bold; color: #000; }
+#result .item a.btn { display: inline-block; height: 38px; width: 110px; font-weight: bold; line-height: 36px; color: #fff; font-size: 14px; background: #e9536a; border-radius: 3px; text-align: center; text-decoration: none; }
+#result .item a.btn:hover { background: #ef6177; }
+@media screen and (max-width: 767px) {
+h1 { text-align:center; margin:15px auto 10px;}
+#content { display: block; margin: 0 auto; padding: 15px; }
+#result { display: block; margin: 0 auto; padding: 15px; width: 100%; }
+#result .item { min-width: 100%; }
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.2.1.js"></script>
+<script type="text/javascript" src="js/zhuanpan.min.js"></script>
+</head>
+<body>
+<div id="mian">
+	<h1>"基层党建大转盘" 项目测试版</h1>
+    <div id="content"> <img id="zhuanpan" src="images/zhuanpan.png" alt="转盘"> <img id="tip" class="pointer" src="images/four1.gif" alt="指针"> </div>
+    <div id="result"></div>
+</div>
+</body>
+</html>
