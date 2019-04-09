@@ -117,11 +117,16 @@ $(function (){
 		return DYname;
 	}	
 		
-	function ifRepeat(array,str){
+	function ifRepeat(array,num){
 		for(var i=0;i<array.length;i++){
-			if(array[i]==str){
+			if(array[i]==num){
 				return false;
 			}
+		}
+		
+		//前 20 次不能抽到 刘剑辉
+		if(array.length<21 && num==2){
+			return false;
 		}
 		return true;
 	}
