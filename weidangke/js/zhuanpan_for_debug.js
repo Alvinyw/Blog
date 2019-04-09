@@ -3,11 +3,11 @@ $(function (){
 	var bRotate = false;
 	
 	function refreshResult(DYnum){
-		var LEN_selectedDY = $("#result .ry").length;
+		//var LEN_selectedDY = $("#result .ry").length;
 		var newItem = $('<span class="ry">'+ getDY(DYnum) +'</span>');
-		if(LEN_selectedDY!=0){
-			$("#result").append("、");
-		}
+		//if(LEN_selectedDY!=0){
+			//$("#result").append("、");
+		//}
 	    $("#result").append(newItem);
 		
 	}
@@ -163,7 +163,7 @@ $(function (){
 			//[11.25, 22.5, 33.75, 45, 56.25, 67.5, 78.75, 90, 101.25, 112.5, 123.75, 135, 146.25, 157.5, 168.75, 180, 191.25, 202.5, 213.75, 225, 236.25, 247.5, 258.75, .....]
 			//-5.625
 			//[5.625, .....]
-			rotateFn(curItem, 360-curItem*11.25-5.625);	
+			rotateFn(curItem, 360-curItem*11.25-7.5);	
 		}else{
 			alert("所有的人员都已被选中过。");
 		}	
