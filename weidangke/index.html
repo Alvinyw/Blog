@@ -63,11 +63,24 @@ return false;
 </head>
 <body>
 <div id="mian">
-    <h1>市委组织部“全员微党课”大转盘 - 测试版</h1>
+    <h1>市委组织部“全员微党课”大转盘</h1>
     <div id="content"> <img id="zhuanpan" src="images/zhuanpan.png" alt="转盘"> <img id="tip" class="pointer" src="images/four1.gif" alt="指针"> </div>
     <div id="result">
         <p>选中的人员如下：</p>
     </div>
 </div>
+<script>
+function initHeight(){
+	var winHeight = document.body.clientHeight - $('h1').outerHeight();
+	var contentMaxHeight = (winHeight*0.80)>935?935:(winHeight*0.80);
+	var resultMaxHeight = (winHeight*0.65)>770?770:(winHeight*0.65);
+	$("#content").css("max-width",contentMaxHeight);
+	$("#result").css("max-width",resultMaxHeight);
+}
+initHeight();
+$(window).resize(function(){
+	initHeight();
+});
+</script>
 </body>
 </html>
