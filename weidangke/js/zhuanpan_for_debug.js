@@ -174,9 +174,13 @@ $(function (){
 				return false;
 			}
 		}
-		
+		return true;
+	}
+	
+	//前 time 次不能抽到 num
+	function notThisOne(time,num){
 		//前 20 次不能抽到 刘剑辉
-		if(array.length<21 && num==2){
+		if(curNameArray.length<time && num==2){
 			return false;
 		}
 		return true;
@@ -203,7 +207,7 @@ $(function (){
 		if(curNameArray.length<defaultNameArray.length){
 			for(var i=0;i>-1;i++){
 				var tempItem = rnd(0,31);
-				if(ifRepeat(curNameArray,defaultNameArray[tempItem])){
+				if(ifRepeat(curNameArray,defaultNameArray[tempItem])&& notThisOne(21,tempItem)){
 					curItem = tempItem;
 					curNameArray.push(curItem);
 					break;
