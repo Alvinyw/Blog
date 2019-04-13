@@ -1,120 +1,171 @@
 $(function (){
 	
+	var defaultNameArray = new Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31); //总共有的人员
+	var curNameArray = new Array(); //已被抽中的人员
+	//var notJoiningNameArray = new Array(); //不参与抽选的人员
+	
+	for(var i=0;i<defaultNameArray.length;i++){
+		$("#selectedName").append("<li data-num='"+ defaultNameArray[i] +"'>"+ getName(defaultNameArray[i]) +"</li>");
+	}
+	$("#mask").show();
+	$("#chooseSelected").fadeIn();
+	
+	function initHeight(){
+		var winHeight = document.body.clientHeight - $('h1').outerHeight();
+		var contentMaxHeight = (winHeight*0.80)>935?935:(winHeight*0.80);
+		var resultMaxHeight = (winHeight*0.65)>770?770:(winHeight*0.65);
+		var chooseSelectedW = $("#chooseSelected").outerWidth();
+		var chooseSelectedH = $("#chooseSelected").outerHeight();
+		
+		$("#content").css("max-width",contentMaxHeight);
+		$("#result").css("max-width",resultMaxHeight);
+		$("#chooseSelected").css({"margin-top":-chooseSelectedH/2,"margin-left":-chooseSelectedW/2});
+	}
+	initHeight();
+	$(window).resize(function(){
+		initHeight();
+	});
+	
+	$("#mask").click(function(){
+		$("#mask").fadeOut();
+		$("#chooseSelected").fadeOut();
+	});
+	
+	$("#selectedName").on("click", "li", function(){
+		$(this).toggleClass('on');
+	});
+	
+	$("#btnConfirmSelected").click(function(){
+		$("#selectedName li").each(function(index, element) {
+			var _curNum = parseInt($(this).attr('data-num'));
+            if($(this).hasClass('on')&&ifRepeat(curNameArray,_curNum)){
+				curNameArray.push(_curNum);
+			}
+        });
+		$("#mask").fadeOut();
+		$("#chooseSelected").fadeOut();
+	});
+	
+	$("#checkSelected").click(function(){
+		$("#selectedName li").removeClass('on');
+		for(var i=0;i<curNameArray.length;i++){
+			$("#selectedName li[data-num='"+ curNameArray[i] +"'").addClass('on');
+		}
+		$("#mask").show();
+		$("#chooseSelected").fadeIn();
+	});
+	
 	var bRotate = false;
 	
-	function refreshResult(DYnum){
-		//var LEN_selectedDY = $("#result .ry").length;
-		var newItem = $('<span class="ry">'+ getDY(DYnum) +'</span>');
-		//if(LEN_selectedDY!=0){
-			//$("#result").append("、");
-		//}
-	    $("#result").append(newItem);
+	function refreshResult(NameNum){
+		var newItem = $('<span class="ry">'+ getName(NameNum) +'</span>');
+	    $("#result .content").append(newItem);
 		
 	}
 	
-	function getDY(DYnum){
-		var curDYnum = parseInt(DYnum);
-		var DYname;
-		switch (curDYnum) {
+	function getName(NameNum){
+		var curNameNum = parseInt(NameNum);
+		var Name;
+		switch (curNameNum) {
 			case 0:
-				DYname = '潘毅彬';
+				Name = '潘毅彬';
 				break;
 			case 1:
-				DYname = '金  浩';
+				Name = '金  浩';
 				break;
 			case 2:
-				DYname = '刘剑辉';
+				Name = '刘剑辉';
 				break;
 			case 3:
-				DYname = '陈  鹄';
+				Name = '陈  鹄';
 				break;
 			case 4:
-				DYname = '龚小兵';
+				Name = '龚小兵';
 				break;
 			case 5:
-				DYname = '陈德明';
+				Name = '陈德明';
 				break;
 			case 6:
-				DYname = '季国强';
+				Name = '季国强';
 				break;
 			case 7:
-				DYname = '金康康';
+				Name = '金康康';
 				break;
 			case 8:
-				DYname = '方寒英';
+				Name = '方寒英';
 				break;
 			case 9:
-				DYname = '许  坚';
+				Name = '许  坚';
 				break;
 			case 10:
-				DYname = '高溶蔚';
+				Name = '高溶蔚';
 				break;
 			case 11:
-				DYname = '陶莉莉';
+				Name = '陶莉莉';
 				break;
 			case 12:
-				DYname = '陈  俊';
+				Name = '陈  俊';
 				break;
 			case 13:
-				DYname = '楼静敏';
+				Name = '楼静敏';
 				break;
 			case 14:
-				DYname = '楼玮玮';
+				Name = '楼玮玮';
 				break;
 			case 15:
-				DYname = '金昭非';
+				Name = '金昭非';
 				break;
 			case 16:
-				DYname = '黄林滨';
+				Name = '黄林滨';
 				break;
 			case 17:
-				DYname = '王  亮';
+				Name = '王  亮';
 				break;
 			case 18:
-				DYname = '毛宏吹';
+				Name = '毛宏吹';
 				break;
 			case 19:
-				DYname = '朱庆军';
+				Name = '朱庆军';
 				break;
 			case 20:
-				DYname = '俞  凯';
+				Name = '俞  凯';
 				break;
 			case 21:
-				DYname = '朱杨威';
+				Name = '朱杨威';
 				break;
 			case 22:
-				DYname = '楼勇军';
+				Name = '楼勇军';
 				break;
 			case 23:
-				DYname = '杨  英';
+				Name = '杨  英';
 				break;
 			case 24:
-				DYname = '陈玉生';
+				Name = '陈玉生';
 				break;
 			case 25:
-				DYname = '邵显明';
+				Name = '邵显明';
 				break;
 			case 26:
-				DYname = '施廖英';
+				Name = '施廖英';
 				break;
 			case 27:
-				DYname = '毛慧玲';
+				Name = '毛慧玲';
 				break;
 			case 28:
-				DYname = '郭侃玲';
+				Name = '郭侃玲';
 				break;
 			case 29:
-				DYname = '王义雪';
+				Name = '王义雪';
 				break;
 			case 30:
-				DYname = '金  灿';
+				Name = '金  灿';
 				break;
 			case 31:
-				DYname = '胡一江';
+				Name = '胡一江';
 				break;
 		}
 		
-		return DYname;
+		return Name;
 	}	
 		
 	function ifRepeat(array,num){
@@ -131,7 +182,7 @@ $(function (){
 		return true;
 	}
 
-	var rotateFn = function (DYnum, angles){
+	var rotateFn = function (NameNum, angles){
 		bRotate = !bRotate;
 		$('#zhuanpan').stopRotate();
 		$('#zhuanpan').rotate({
@@ -140,23 +191,21 @@ $(function (){
 			duration:2500,
 			callback:function (){
 				bRotate = !bRotate;
-				refreshResult(DYnum);
+				refreshResult(NameNum);
 			}
 		})
 	};
 
-	var defaultJZ = new Array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31); //总共有的人员
-	var curJZ = new Array(); //已被抽中的人员
 	$('.pointer').click(function (){
 		if(bRotate)return;
 		var curItem;
 		
-		if(curJZ.length<defaultJZ.length){
+		if(curNameArray.length<defaultNameArray.length){
 			for(var i=0;i>-1;i++){
 				var tempItem = rnd(0,31);
-				if(ifRepeat(curJZ,defaultJZ[tempItem])){
+				if(ifRepeat(curNameArray,defaultNameArray[tempItem])){
 					curItem = tempItem;
-					curJZ.push(curItem);
+					curNameArray.push(curItem);
 					break;
 				}
 			}
@@ -165,7 +214,7 @@ $(function (){
 			//[5.625, .....]
 			rotateFn(curItem, 360-curItem*11.25-7.5);	
 		}else{
-			alert("所有的人员都已被选中过。");
+			alert("该轮抽选中所有的人员都已被选中过。");
 		}	
 	});
 });
