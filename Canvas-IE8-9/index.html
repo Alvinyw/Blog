@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/cssResetH5.css" />
     <link rel="stylesheet" type="text/css" href="css/imageViewer.css" />
     <!--[if lte IE 8]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/global-dom.js"></script>
     <script type="text/javascript" src="js/imageViewer.js"></script>
@@ -26,6 +27,8 @@
             <li><button onclick="fuc_changePage('f')">front</button></li>
             <li><button onclick="fuc_changePage('l')">last</button></li>
             <li><button onclick="fuc_download()">download</button></li>
+            <li class="edit"><button onclick="fuc_edit()">edit</button></li>
+            <li class="save" style="display:none;"><button onclick="fuc_save()">save</button></li>
         </ul>
         <div id="imageViewer"></div>
     </div>

@@ -46,6 +46,7 @@
     this._imgContainer = lib._querySelectorAll(this._imageViewer,'div.imageContainer')[0];
     this._imgsDiv = lib._querySelectorAll(this._imageViewer,'div.kPainterImgsDiv')[0];
     this._thumbnailContainer = lib._querySelectorAll(this._imageViewer,'div.thumbnailContainer')[0];
+    this._editCroper = lib._querySelectorAll(this._imageViewer,'div.kPainterCroper')[0];
 
     this._defaultFileInput = document.createElement("input");
     this._defaultFileInput.setAttribute("type","file");
@@ -64,6 +65,8 @@
     this.curIndex = -1;
     this.imgArray = [];
     this.thumbnailArray = [];
+
+    this.mode = 'view';// edit
 
     lib.addEvent(this._defaultFileInput,"change", function(event) {
         var ev = event || window.event;
@@ -95,6 +98,11 @@
     
     function fuc_touchstart(event){
         var ev = event || window.event;
+
+        if(_this.mode!='view'){
+            return false;
+        }
+        
 		lib.stopDefault(ev);
 
         lib.addEvent(_this._imgContainer,"mousemove", fuc_touchmove);
@@ -149,6 +157,11 @@
 
     function fuc_touchend(event){
         var ev = event || window.event;
+
+        if(_this.mode!='view'){
+            return false;
+        }
+
 		lib.stopDefault(ev);
         
         if(_this.getCount()<1){return false;}
@@ -401,6 +414,33 @@ ImageViewer.prototype.showFileChooseWindow = function(){
     return true;
 };
 
+ImageViewer.prototype.edit = function(index){
+    var _this = this;
+    _this.mode = 'edit';
+    var _curIndex = index || _this.curIndex;
+    var targetImg = _this.getImage(_curIndex);
+
+    _this._editCroper.style.display = 'block';
+    _this._editCroper.style.width = targetImg.width + 'px';
+    _this._editCroper.style.height = targetImg.height + 'px';
+
+    _this._editCroper.style.top = (_this._imgContainerH - targetImg.height)/2 + 'px';
+    _this._editCroper.style.left = (_this._imgContainerW - targetImg.width)/2 + 'px';
+
+    //console.log(targetImg);
+    //console.log(_this._editCroper);
+    return true;
+};
+
+ImageViewer.prototype.save = function(index){
+    var _this = this;
+    _this.mode = 'view';
+    var _curIndex = index || _this.curIndex;
+
+    _this._editCroper.style.display = 'none';
+
+}
+
 ImageViewer.prototype._updateImagePosition = function(){
     var _imgArray = this.imgArray,
         _curIndex = this.curIndex,
@@ -462,17 +502,17 @@ ImageViewer.prototype._fitImageForImageContainer = function (img) {
 }
 
 ImageViewer.prototype._fitImageForThumbnailContainer = function (img) {
-    var containerAspectRatio = this._thumbnailContainerW/3*0.98 / this._thumbnailContainerH*0.95;
+    var containerAspectRatio = this._thumbnailContainerW/3 / (this._thumbnailContainerH);
     var imgAspectRatio = img.width / img.height;
 
     if(imgAspectRatio>containerAspectRatio){
-        img.width = this._thumbnailContainerW/3*0.98*0.98;
+        img.width = this._thumbnailContainerW/3*0.95;
         img.height = img.width/imgAspectRatio;
         img.style.marginTop = (this._thumbnailContainerH*0.95 - img.height)/2 + 'px';
     }else {
         img.height = this._thumbnailContainerH*0.95;
         img.width = img.height*imgAspectRatio;
-        img.style.marginLeft = (this._thumbnailContainerW/3*0.98*0.98 - img.width)/2 + 'px';
+        img.style.marginLeft = (this._thumbnailContainerW/3*0.95 - img.width)/2 + 'px';
     }
 }
 

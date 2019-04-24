@@ -54,3 +54,17 @@ function fuc_download(){
     if(!imageViewer){return false;}
     imageViewer.download();
 }
+
+function fuc_edit(){
+	if(!imageViewer){return false;}
+    imageViewer.edit(imageViewer.getCurentIndex());
+	$("#toolGrp li.edit").hide();
+	$("#toolGrp li.save").show();
+}
+
+function fuc_save(){
+	if(!imageViewer){return false;}
+    imageViewer.save(imageViewer.getCurentIndex());
+	$("#toolGrp li.edit").show();
+	$("#toolGrp li.save").hide();
+}
