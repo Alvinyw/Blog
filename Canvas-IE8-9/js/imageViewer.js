@@ -229,7 +229,9 @@ ImageViewer.prototype.captureImage = function (url) {
         _this._addImgToThumbnail(img.cloneNode(true));
 
         _this.curIndex ++;
-        _this.showImage(_this.curIndex);        
+        _this.showImage(_this.curIndex);     
+		
+		console.log(img);  
     }
     img.onerror = function(){
         console.log("Failed to create image node."); 
