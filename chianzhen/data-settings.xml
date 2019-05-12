@@ -143,19 +143,19 @@
 	<!-- 抽查内容信息设置：Begin -->
 	<chouChaNeiRong>
 		<value name="村情">
-			<link>C:\Program Files</link>
+			<link>./Docs/doc1</link>
 		</value>
 		<value name="党建基本情况">
-			<link>C:\Program Files</link>
+			<link>./Docs/doc3</link>
 		</value>
 		<value name="党员基本情况">
-			<link>C:\Program Files</link>
+			<link>./Docs/doc2</link>
 		</value>
 		<value name="应知应会">
-			<link>C:\Program Files</link>
+			<link>./Docs/doc1</link>
 		</value>
 		<value name="双星争创创业承诺">
-			<link>C:\Program Files</link>
+			<link>./Docs/doc2</link>
 		</value>
 		
 		<!-- 随机跳动的速度，默认为 70(ms); 1s = 1000ms -->
