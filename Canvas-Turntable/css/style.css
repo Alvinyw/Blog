@@ -1,0 +1,93 @@
+* { margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body { background: #f5f5f5; }
+.clearfix:after { display: block; content: ''; clear: both; }
+/* 顶部 “抽工作片” 和 “抽科室” 的切换导航样式 */
+#pageNav { display: table; margin: 15px auto 20px; text-align: center; }
+#pageNav li { display: table-cell; margin: 0; height: auto; width: 90px; font-size: 14px; text-align: center; line-height: 40px; font-weight: bold; color: #000; border: 2px solid #aaa; border-right: none; cursor: pointer; }
+#pageNav li:first-child { border-radius: 4px 0 0 4px; }
+#pageNav li:last-child { border-right: 2px solid #aaa; border-radius: 0 4px 4px 0; }
+#pageNav li.on { border-color: #e9536a; background: #e9536a; color: #fff; cursor: default; }
+/*---------------------------------------------------------------------*/
+/* “抽工作片” 和 “抽科室” 共同样式 */
+#main { position: relative; padding-bottom: 40px; }
+.section h2 { font-size: 26px; line-height: 40px; margin: 0 0 15px; text-align: center; }
+#chouGongZuoPian, #chouKeShi { position: absolute; z-index: -1; top: 0; left: 0; width: 100%; opacity: 0; }
+#chouGongZuoPian.on, #chouKeShi.on { position: relative; z-index: 10; }
+/*---------------------------------------------------------------------*/
+/* “抽工作片” 模块样式 */
+#gongZuoPian { width: 90%; margin: 0 5%; }
+#gongZuoPian_result { margin: 0 5%; width: 90%; }
+#gongZuoPian_result .item { padding: 15px 10px; margin: 20px auto 0; border: 2px solid #999; border-radius: 4px; background: #fff; }
+#gongZuoPian_result .item .title { margin-bottom: 15px; color: #000; font-size: 18px; font-weight: bold; }
+#gongZuoPian_result .item .time { margin: 0 5px; color: red; }
+#gongZuoPian_result .item .name { color: red; }
+#gongZuoPian_result .item .lbl { font-size: 14px; line-height: 24px; color: #000; font-weight: bold; }
+#gongZuoPian_result .item .result span { position: relative; display: inline-block; padding: 0 13px 0 25px; margin-right: 6px; margin-bottom: 6px; width: auto; height: 40px; font-size: 14px; line-height: 38px; text-align: center; color: #fff; font-weight: bold; background: #e9536a; border: 1px solid #e9536a; border-radius: 6px; cursor: pointer; }
+#gongZuoPian_result .item .result span i { position: absolute; top: 10px; left: 5px; line-height: 16px; width: 16px; height: 16px; border-radius: 50%;
+background: #fff; color: #e9536a; font-size: 12px; font-weight: bolder; font-style: normal; text-align: center;}
+#gongZuoPian_result .item .result h3 { margin: 10px 0 5px; font-size: 14px; line-height: 24px; color: #000; }
+#gongZuoPian_result .item .alertText { margin: 50px 0 55px; font-size: 20px; color: #000; font-style: italic; font-weight: bold; }
+/*村庄样式*/
+
+/*抽查内容样式*/
+#gongZuoPian_result .content { margin-top: 25px; padding-top: 25px; border-top: 1px solid #aaa; }
+#gongZuoPian_result .content a { text-decoration: none; color: #444; font-weight: bold; }
+#gongZuoPian_result .content .itemGrp { padding: 5px; margin-top: 8px; text-align: left; list-style: none; border: 1px solid #aaa; border-radius: 4px; background: #f5f5f5; }
+#gongZuoPian_result .content .itemGrp li { display: inline-block; margin: 5px; padding: 0 15px; height: 40px; min-width: 100px; font-size: 14px; line-height: 38px; text-align: center; background: #ddd; border: 1px solid #aaa; border-radius: 4px; cursor: default; box-shadow: 0 0 8px #999; }
+#gongZuoPian_result .content .itemGrp li a { pointer-events: none; }
+#gongZuoPian_result .content .itemGrp li.selected { background: none; opacity: .5; cursor: pointer; }
+#gongZuoPian_result .content .itemGrp li.selected a { pointer-events: painted; }
+#gongZuoPian_result .content .itemGrp li.current { background: #ef6177; box-shadow: 0 0 8px #ef6177; border-color: #e9536a; cursor: default; opacity: 1; }
+#gongZuoPian_result .content .itemGrp li.current a { color: #fff; font-weight: bold; pointer-events: painted; cursor: pointer; }
+#gongZuoPian_result .content .btnStart { display: block; margin: 15px auto 20px; width: 60px; height: 60px; border-radius: 50%; color: #fff; font-size: 16px; font-weight: bold; background: #e9536a; outline: none; border: none; cursor: pointer; }
+#gongZuoPian_result .content .btnStart:hover { background: #ef6177; }
+#gongZuoPian_result .content .btnStart.disable { opacity: .5; }
+#gongZuoPian_result .content .result span { min-width: 80px; }
+#gongZuoPian_result .content .result span a { color: #fff; }
+/*---------------------------------------------------------------------*/
+/* “抽科室” 模块样式 */
+#keShi { width: 98%; margin: 0 1%; }
+#keShi .result { padding: 15px 10px; margin: 20px auto 0; border: 2px solid #999; border-radius: 4px; background: #fff; }
+#keShi .result h3 { margin: 5px 0; font-size: 14px; line-height: 24px; color: #000; }
+#keShi .result span { display: inline-block; padding: 0 13px; margin-right: 10px; margin-bottom: 10px; width: auto; height: 40px; font-size: 14px; line-height: 38px; text-align: center; color: #fff; font-weight: bold; background: #e9536a; border: 1px solid #e9536a; border-radius: 6px; cursor: pointer; }
+#keShi .result span i { display: none;}
+/*---------------------------------------------------------------------*/
+@media (min-width: 768px) {
+#main { padding-bottom: 50px; }
+/* 顶部 “抽工作片” 和 “抽科室” 的切换导航样 */
+#pageNav { margin: 15px auto 30px; }
+#pageNav li { width: 140px; font-size: 16px; line-height: 46px; }
+/*---------------------------------------------------------------------*/
+/* “抽工作片” 模块样式 */
+#gongZuoPian { width: 500px; margin: 0 auto; }
+/*村庄样式*/
+#gongZuoPian_result .village { float: left; padding-right: 10px; width: 50%; border-right: 1px solid #aaa; }
+#gongZuoPian_result .item .alertText { margin: 60px 0 65px; font-size: 26px; }
+/*抽查内容样式*/
+#gongZuoPian_result .content { float: left; padding-left: 10px; width: 50%; margin-top: 0; padding-top: 0; border-top: none; border-left: 1px solid #aaa; margin-left: -1px; }
+#gongZuoPian_result .content .itemGrp { padding: 10px; }
+#gongZuoPian_result .content .itemGrp li { margin: 8px; }
+/*---------------------------------------------------------------------*/
+/* “抽科室” 模块样式 */
+#keShi { width: 730px; margin: 0 auto; }
+#keShi .result { padding: 15px 10px 10px; margin-top: 30px; }
+#keShi .result h3 { margin: 5px 0 10px; font-size: 18px; line-height: 27px; }
+#keShi .result span { padding: 0 16px; height: 45px; line-height: 43px; font-size: 16px; }
+/*---------------------------------------------------------------------*/
+}
+@media (min-width: 992px) {
+#main { padding-bottom: 80px; }
+/* 顶部 “抽工作片” 和 “抽科室” 的切换导航样 */
+#pageNav li { width: 150px; font-size: 16px; line-height: 52px; }
+/*---------------------------------------------------------------------*/
+/* “抽工作片” 和 “抽科室” 共同样式 */
+#gongZuoPian_result .item { padding: 20px; }
+/*---------------------------------------------------------------------*/
+/* “抽工作片” 模块样式 */
+#gongZuoPian_result { width: 950px; margin: 0 auto; }
+/*村庄样式*/
+#gongZuoPian_result .village { padding-right: 20px; }
+/*抽查内容样式*/
+#gongZuoPian_result .content { padding-left: 20px; }
+/*---------------------------------------------------------------------*/
+}

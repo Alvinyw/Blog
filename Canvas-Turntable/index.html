@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赤岸镇转盘 - 测试版</title>
+<link type="text/css" rel="stylesheet" href="css/style.css?v=20190518" />
+</head>
+
+<body>
+<ul id="pageNav">
+    <li class="on">抽工作片</li>
+    <li>抽科室</li>
+</ul>
+<div id="main">
+    <div id="chouGongZuoPian" class="section on" style="opacity:1;">
+        <h2>抽工作片</h2>
+        <div id="gongZuoPian"></div>
+        <div id="gongZuoPian_result" class="result"></div>
+    </div>
+    <div id="chouKeShi" class="section">
+        <h2>抽科室</h2>
+        <div id="keShi"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/CanvasTurntable_withoutFunction.min.js?v=20190428"></script>
+<script type="text/javascript" src="js/CanvasTurntable.min.js?v=20190518"></script>
+<script type="text/javascript" src="js/RandomSelection.min.js?v=20190518"></script>
+<script type="text/javascript" src="js/Init.min.js?v=20190518"></script>
+<script type="text/javascript">
+/*window.onload = function(){
+//屏蔽键盘事件
+document.onkeydown = function (){
+var e = window.event || arguments[0];
+//F12
+if(e.keyCode == 123){
+return false;
+//Ctrl+Shift+I
+}else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+return false;
+//Shift+F10
+}else if((e.shiftKey) && (e.keyCode == 121)){
+return false;
+//Ctrl+U
+}else if((e.ctrlKey) && (e.keyCode == 85)){
+return false;
+}
+};
+//屏蔽鼠标右键
+document.oncontextmenu = function (){
+return false;
+}
+}*/
+</script>
+</html>
