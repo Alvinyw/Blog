@@ -6,19 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ImageViewer</title>
     <link rel="stylesheet" type="text/css" href="css/cssResetH5.css" />
-    <link rel="stylesheet" type="text/css" href="css/imageViewer.css" />
-    <!--[if lte IE 8]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
-    <script type="text/javascript" src="js/common.js"></script>
-    <script type="text/javascript" src="js/global-dom.js"></script>
-    <script type="text/javascript" src="js/imageViewer.js"></script>
-    <script type="text/javascript" src="js/opration.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mbc.css" />
+    <script type="text/javascript">
+    	var Dynamsoft = Dynamsoft || {};
+    </script>
 </head>
 <body>
     <div id="main">
         <ul id="toolGrp">
-            <li><button onclick="fuc_captureImage()">captureImage</button></li>
-            <li><button onclick="fuc_getCount()">getCount</button></li>
-            <li><button onclick="fuc_getCurentIndex()">getCurentIndex</button></li>
+            <li><button onclick="fuc_LoadImage()">LoadImage</button></li>
+            <!--
             <li><button onclick="fuc_getImage()">getImage</button></li>
             <li><button onclick="fuc_deleteImage()">deleteImage</button></li>
             <li><button onclick="fuc_changePage('p')">previous</button></li>
@@ -26,23 +23,50 @@
             <li><button onclick="fuc_changePage('f')">front</button></li>
             <li><button onclick="fuc_changePage('l')">last</button></li>
             <li><button onclick="fuc_download()">download</button></li>
+            -->
+            <li class="visible_inView"><button onclick="fuc_showVideo()">show video</button></li>
+            <li class="visible_inView"><button onclick="fuc_ShowImageEditor()">edit</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_CloseImageEditor()">cancel</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_rotateLeft()">RotateLeft</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_rotateRight()">RotateRight</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_rotate180()">Rotate180</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_rotateMirror()">Mirror</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_rotateFlip()">Flip</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_Crop()">Crop</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_Save()">Save</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_Undo()">Undo</button></li>
+            <li class="visible_inEdit"><button onclick="fuc_Redo()">Redo</button></li>
+            <li class="visible_inView"><button onclick="fuc_RemoveCurrentImage()">Remove Selected Image</button></li>
+            <li class="visible_inView"><button onclick="fuc_RemoveAllImages()">Remove All Images</button></li>
         </ul>
         <div id="imageViewer"></div>
     </div>
 </body>
-<script type="text/javascript">
-var imageViewer = new ImageViewer("imageViewer");
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
-imageViewer.onNumChange = function(curIndex,imgCount){
-    var _curIndex = parseInt(curIndex)+1;
-    //console.log('curIndex '+_curIndex+' imgCount: '+imgCount);
-}
 
-window.onresize = function(){
-    var imgCount = imageViewer.getCount();
-    if(imgCount>1){
-        imageViewer.adaptiveLayout();
-    }
-};
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/exif.js"></script>
+
+<script type="text/javascript" src="js/pdf.js"></script>
+<script type="text/javascript" src="js/pdf.worker.js"></script>
+
+<script type="text/javascript" src="js/global-dom.js"></script>
+<script type="text/javascript" src="js/promise.js"></script>
+<script type="text/javascript" src="js/kUtil.js"></script>
+<script type="text/javascript" src="js/VideoViewer.js"></script>
+<script type="text/javascript" src="js/ImageAreaSelector.js"></script>
+<script type="text/javascript" src="js/ImageControl.js"></script>
+<script type="text/javascript" src="js/ThumbnailControl.js"></script>
+<script type="text/javascript" src="js/ImageViewer.js"></script>
+
+<!--
+<script type="text/javascript" src="js/build/mbc.js?v=20190522"></script>
+-->
+
+<script type="text/javascript" src="js/opration.js?v=20190522"></script>
+<script>
+    $(".visible_inEdit").hide();
+    $(".visible_inView").show();
 </script>
 </html>
