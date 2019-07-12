@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="../assets/css/basis.css" />
+    <style>
+        #wrapper { background-color: #f5f5f5;}
+        #main .container { background-color: #fff;}
+        h2 { height: 68px; font-size: 20px; line-height: 68px; line-break: 30px; padding: 0 25px; border-bottom:1px solid #eee; }
+        .sec2 { margin-top: 30px; margin-bottom: 40px;}
+        .sec2 .container { padding-bottom: 60px;}
+        .sec2 table { width: 1150px; margin: 30px auto 0; border-collapse: collapse; border: 1px solid #eee;} 
+        .sec2 table td { padding-left: 20px; height: 48px; border-top: 1px solid #eee;}
+        .sec2 table tr:first-child td { border-top: none; background-color: #fafafa; } 
+        .sec2 table td a { color: #486AAF;}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div class="sec2">
+                <div class="container">
+                    <h2>接口服务统计</h2>
+                    <table>
+                        <tr>
+                            <td>序号</td>
+                            <td>接口名称</td>
+                            <td>总调用次数</td>
+                            <td>总失败次数</td>
+                            <td>调用失败率</td>
+                            <td>平均耗时</td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>实名绑卡</td>
+                            <td>87542</td>
+                            <td>6542</td>
+                            <td>7.74%</td>
+                            <td>445ms</td>
+                            <td><a href="javascript:void(0)">明细</a></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>绑卡-H5</td>
+                            <td>83982</td>
+                            <td>1197</td>
+                            <td>1.43%</td>
+                            <td>360ms</td>
+                            <td><a href="javascript:void(0)">明细</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/header.js"></script>
+<script src="../assets/js/footer.js"></script>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户信息查询</title>
+    <link rel="stylesheet" href="../assets/css/basis.css" />
+    <style>
+        #main { background-color: #f5f5f5;}
+        #nav { height: 56px; text-align: left; background-color: #fff;}
+        #nav a { display: inline-block; padding: 0 10px; height: 56px; line-height: 54px; margin-right: 20px; color: #666; }
+        #nav a:nth-child(2) { color: #FF665F; line-height: 52px; border-bottom: 2px solid #FF665F;}
+        .content { margin-top: 30px;}
+        .content .sideBar { padding: 30px; min-height: 680px; width: 240px; float: left; background-color: #fff; }
+        .content .sideBar.fixed { position: fixed; top: 20px;}
+        .content .sideBar p { font-size: 18px; margin-bottom: 15px;}
+        .content .sideBar li a { font-size: 14px; color: #666;}
+        .content .sideBar li.on a { color: #FF665F;}
+        .content .sideBar li.on:after { background-color: #FF665F;}
+        .mainContent { float: right; width: 940px; margin-left: 20px; margin-bottom: 40px; padding: 0 30px 60px; background-color: #fff; }
+        .mainContent h3 { font-size: 18px; line-height: 27px; margin-top: 30px; margin-bottom: 5px;}
+        .mainContent p { font-size: 14px; color: #999;}
+        .mainContent .bgGray { padding: 10px 20px;}
+        .mainContent table { width: 100%; margin: 5px auto 0; border-collapse: collapse; }
+        .mainContent table td { padding-left: 25px; font-size: 14px; color: #666; height: 50px; border-bottom: 1px solid #eee;}
+        .mainContent table tr:first-child td { color: #666; }
+        .mainContent pre { font-size: 14px; line-height: 24px; }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div id="nav">
+                <div class="container">
+                    <a href="./resource-center.html">应用产品</a>
+                    <a href="./serving-product.html">服务产品</a>
+                    <a href="./access-guide.html">接入指南</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <div class="sideBar">
+                        <p>用户信息查询</p>
+                        <ul class="list-circle">
+                            <li class="on"><a href="#one">概述</a></li>
+                            <li><a href="#two">接口类型</a></li>
+                            <li><a href="#three">请求参数说明</a></li>
+                            <li><a href="#four">响应参数说明</a></li>
+                            <li><a href="#five">响应状态码</a></li>
+                        </ul>
+                    </div>
+                    <div class="mainContent">
+                        <h3 id="one">1. 概述</h3>
+                        <p>本接口用于企业查询所属的客户信息。</p>
+                        <h3 id="two">2. 接口类型</h3>
+                        <p class="bgGray">
+                            http请求方式：POST <br/>
+                            请求地址：https://open.9fgroup.com/urm/user/query
+                        </p>
+                        <h3 id="three">3. 请求参数说明</h3>
+                        <p>HTTP请求报文体包含的请求参数如下：</p>
+                        <table>
+                            <tr>
+                                <td>参数名称</td>
+                                <td>中文名称</td>
+                                <td>参数类型</td>
+                                <td>参数长度</td>
+                                <td>是否必填</td>
+                                <td>参数说明</td>
+                            </tr>
+                            <tr>
+                                <td>userID</td>
+                                <td>用户ID</td>
+                                <td>String</td>
+                                <td>16</td>
+                                <td>是</td>
+                                <td>玖富开放平台生成的用户ID</td>
+                            </tr>
+                        </table>
+                        <p class="mt10">HTTP请求报文体包含的请求参数如下：</p>
+                        <pre class="bgGray mt10">
+{ 
+    "userID": "0900239208112376" 
+}</pre>
+                        <h3 id="four">4. 响应参数说明</h3>
+                        <p>HTTP响应参数中业务参数(data)包含的内容如下：</p>
+                        <table>
+                            <tr>
+                                <td>参数名称</td>
+                                <td>中文名称</td>
+                                <td>参数类型</td>
+                                <td>参数长度</td>
+                                <td>是否必填</td>
+                                <td>参数说明</td>
+                            </tr>
+                            <tr>
+                                <td>userID</td>
+                                <td>用户ID</td>
+                                <td>String</td>
+                                <td>16</td>
+                                <td>是</td>
+                                <td>玖富开放平台生成的用户ID</td>
+                            </tr>
+                            <tr>
+                                <td>cellPhone</td>
+                                <td>注册手机号</td>
+                                <td>String</td>
+                                <td>11</td>
+                                <td>是</td>
+                                <td>用户注册时使用的手机号</td>
+                            </tr>
+                            <tr>
+                                <td>userName</td>
+                                <td>用户姓名</td>
+                                <td>String</td>
+                                <td>64</td>
+                                <td>否</td>
+                                <td>用户如果未实名则无用户姓名信息</td>
+                            </tr>
+                            <tr>
+                                <td>idType</td>
+                                <td>身份类型</td>
+                                <td>String</td>
+                                <td>2</td>
+                                <td>否</td>
+                                <td>用户如果未实名则无用户证件信息</td>
+                            </tr>
+                            <tr>
+                                <td>idNo</td>
+                                <td>证件号</td>
+                                <td>String</td>
+                                <td>64</td>
+                                <td>否</td>
+                                <td>用户如果未实名则无用户证件信息</td>
+                            </tr>
+                            <tr>
+                                <td>customerID</td>
+                                <td>客户编号</td>
+                                <td>String</td>
+                                <td>64</td>
+                                <td>否</td>
+                                <td>玖富统一客户中心客户编号，存管时需要</td>
+                            </tr>
+                            <tr>
+                                <td>extUserID</td>
+                                <td>外部用户编号</td>
+                                <td>String</td>
+                                <td>64</td>
+                                <td>否</td>
+                                <td>外部用户编号，静默注册上传</td>
+                            </tr>
+                        </table>
+                        <p class="mt10">示例</p>
+                        <pre class="bgGray mt10">
+{ 
+    "herder":{ 
+        "code":"1028", 
+        "time":"20190323 18:00:00", 
+        "sign":"enshjdhjsfggsiowjhjhgehj", 
+        "channelID":"9823988"， 
+        "requestNo":"999038377729999340"， 
+        "version":"1.0.0" 
+    } 
+    "body": {
+        "userID":"0900239208112376", 
+        "cellphone":"18923348772", 
+        "userName":"张三", 
+        "idType":"01", 
+        "idNo":"", 
+        "customerID":"01220112", 
+        "extUserID":"12003022" 
+    } 
+}</pre>
+                        <h3 id="five">5. 响应状态码</h3>
+                        <p>除公共的响应状态码外，该接口可能返回的响应状态码说明如下：</p>
+                        <table>
+                            <tr>
+                                <td>响应状态码</td>
+                                <td>说明</td>
+                            </tr>
+                            <tr>
+                                <td>010001</td>
+                                <td>用户不存在</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/header.js"></script>
+<script src="../assets/js/footer.js"></script>
+<script>
+$(".sideBar ul li").click(function(){
+    $(".sideBar ul li").removeClass("on");
+    $(this).addClass("on");
+});
+$(window).scroll(function(){
+    var windowScTop = $(window).scrollTop();
+    if (windowScTop>130){
+        $(".sideBar").addClass('fixed');
+    }else{
+        $(".sideBar").removeClass('fixed');
+    }
+});
+</script>
+</html>

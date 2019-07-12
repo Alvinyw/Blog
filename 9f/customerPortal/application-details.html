@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>应用产品详情</title>
+    <link rel="stylesheet" href="../assets/css/basis.css" />
+    <style>
+        #main { background-color: #f5f5f5;}
+        #nav { height: 56px; text-align: left; background-color: #fff;}
+        #nav a { display: inline-block; padding: 0 10px; height: 56px; line-height: 54px; margin-right: 20px; color: #666; }
+        #nav a:nth-child(1) { color: #FF665F; line-height: 52px; border-bottom: 2px solid #FF665F;}
+        .content { margin-top: 30px;}
+        .content .sideBar { padding: 30px; min-height: 680px; width: 240px; float: left; background-color: #fff; }
+        .content .sideBar.fixed { position: fixed; top: 20px;}
+        .content .sideBar p { font-size: 18px; margin-bottom: 15px;}
+        .content .sideBar li a { font-size: 14px; color: #666;}
+        .content .sideBar li.on > a { color: #FF665F;}
+        .content .sideBar li.on:after { background-color: #FF665F;}
+        .content .sideBar li li { margin-bottom: 0;}
+        .mainContent { float: right; width: 940px; margin-left: 20px; margin-bottom: 40px; padding: 0 30px 60px; background-color: #fff; }
+        .mainContent h3 { font-size: 18px; line-height: 27px; margin-top: 30px; margin-bottom: 5px;}
+        .mainContent p { font-size: 14px; color: #999;}
+        .mainContent .bgGray { padding: 10px 20px;}
+        .mainContent table { width: 100%; margin: 5px auto 0; border-collapse: collapse; }
+        .mainContent table td { padding-left: 25px; font-size: 14px; color: #666; height: 50px; border-bottom: 1px solid #eee;}
+        .mainContent table tr:first-child td { color: #666; }
+        .mainContent pre { font-size: 14px; line-height: 24px; }
+        .bd_table { border: 1px solid #eee; }
+        .bd_table td { border-top: 1px solid #eee; border-right: 1px solid #eee; text-align: center; vertical-align: middle;}
+        .bd_table tr:first-child td { border-top: none;}
+        .bd_table tr td:last-child { border-right: none;}
+        .tc_table td { text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div id="nav">
+                <div class="container">
+                    <a href="./resource-center.html">应用产品</a>
+                    <a href="./serving-product.html">服务产品</a>
+                    <a href="./access-guide.html">接入指南</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <div class="sideBar">
+                        <p>玖借</p>
+                        <ul class="list-circle">
+                            <li class="on"><a href="#one">产品概述</a></li>
+                            <li><a href="#two">适用场景</a></li>
+                            <li><a href="#three">接入模式</a></li>
+                            <li><a href="#four">接口文档-H5</a>
+                                <ul>
+                                    <li><a href="#four_one">联合登陆模式</a></li>
+                                    <li><a href="#four_two">非联合登陆模式</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#five">接口文档-API</a></li>
+                        </ul>
+                    </div>
+                    <div class="mainContent">
+                        <h3 id="one">1. 产品概述</h3>
+                        <p> 玖借是玖富数科集团推出的智能信用账户产品，为企业提供金融产品模型。企业可快速对接玖借应用产品，建立属于企业的金融业务产品。用户由企业自研客户端进入玖借，通过实名认证、风险评估获得一定的信用额度，即可享受额度分期等服务，链接玖富所有的用户和场景。</p>
+                        <h3 id="two">2. 适用场景</h3>
+                        <p>适用于欲快速对接额度消费借贷金融业务的企业方，包括且不限制于金融机构、旅游类产品、电商平台等。</p>
+                        <h3 id="three">3. 接入模式</h3>
+                        <p>可根据企业需求，可选择一键对接玖借H5全流程模式、部分服务API模式对接辅助运营；也可以通过API全流程对接，更好地留存客户信息。</p>
+                        <h3 id="four">4. 接口文档-H5</h3>
+                        <p id="four_one">4.1 联合登陆模式</p>
+                        <p>H5 联合登陆模式，商户可通过客户三要素信息调用联合登陆接口，系统后台根据客户在玖借产品流程中所处状态，返回客户所处状态应执行的下一步业务操作页面URL，商户可直接展示该URL，从而跳过前期已操作的业务步骤，简化用户操作，提高用户体验。</p>
+                        <p class="mt10">4.1.1 接口类型</p>
+                        <div class="bgGray mt10">
+                                http请求方式：POST<br/>
+                                请求地址：https://open.9fgroup.com/channel/auth
+                        </div>
+                        <p class="mt10">4.1.2 请求参数说明</p>
+                        <p>HTTP请求报文体包含的请求参数如下：</p>
+                        <table>
+                            <tr>
+                                <td>参数名称</td>
+                                <td>中文名称</td>
+                                <td>参数类型</td>
+                                <td>参数长度</td>
+                                <td>是否必填</td>
+                                <td>参数说明</td>
+                            </tr>
+                            <tr>
+                                <td>mobile</td>
+                                <td>手机号</td>
+                                <td>String</td>
+                                <td>5</td>
+                                <td>是</td>
+                                <td>客户注册手机号码</td>
+                            </tr>
+                            <tr>
+                                <td>name</td>
+                                <td>姓名</td>
+                                <td>String</td>
+                                <td>20</td>
+                                <td>是</td>
+                                <td>客户姓名</td>
+                            </tr>
+                            <tr>
+                                <td>cardNo</td>
+                                <td>身份证号</td>
+                                <td>String</td>
+                                <td>128</td>
+                                <td>是</td>
+                                <td>客户身份证号码</td>
+                            </tr>
+                        </table>
+                        <p class="mt10">示例</p>
+                        <pre class="bgGray mt10">
+{
+    "mobile":"18976543877",
+    "name":"张三",
+    "cardNo":"443777198809129838"
+
+}</pre>
+
+                        <p class="mt10">4.1.3 响应参数说明</p>
+                        <p>HTTP响应参数中业务参数(data)包含的内容如下：</p>
+                        <table>
+                            <tr>
+                                <td>参数名称</td>
+                                <td>中文名称</td>
+                                <td>参数类型</td>
+                                <td>参数长度</td>
+                                <td>是否必填</td>
+                                <td>参数说明</td>
+                            </tr>
+                            <tr>
+                                <td>userID</td>
+                                <td>用户ID</td>
+                                <td>String</td>
+                                <td>16</td>
+                                <td>是</td>
+                                <td>玖富开放平台生成的用户ID</td>
+                            </tr>
+                            <tr>
+                                <td>url</td>
+                                <td>页面链接</td>
+                                <td>String</td>
+                                <td>128</td>
+                                <td>是</td>
+                                <td>URL跳转地址</td>
+                            </tr>
+                        </table>
+                        <p class="mt10">示例</p>
+                        <pre class="bgGray mt10">
+{
+    "herder":{
+        "code":"1028",
+        "time":"20190323 18:00:00",
+        "sign":"enshjdhjsfggsiowjhjhgehj",
+        "channelID":"9823988"，
+        "requestNo":"999038377729999340"，
+        "version":"1.0.0"
+    }
+
+    "body":{
+        "userID":"0900239208112376",
+        "cellphone":"http://open.9fgroup.com/jiujie/login"
+    }
+}</pre>
+                        <p class="mt10">4.1.3 状态响应码</p>
+                        <table class="tc_table"> 
+                            <tr>
+                                <td width="50%">响应状态码</td>
+                                <td width="50%">说明</td>
+                            </tr>
+                            <tr>
+                                <td>000000</td>
+                                <td>执行成功</td>
+                            </tr>
+                            <tr>
+                                <td>001000</td>
+                                <td>执行失败</td>
+                            </tr>
+                            <tr>
+                                <td>002000</td>
+                                <td>执行异常</td>
+                            </tr>
+                            <tr>
+                                <td>303000 </td>
+                                <td>黑名单用户</td>
+                            </tr>
+                            <tr>
+                                <td>303001 </td>
+                                <td>用户不存在</td>
+                            </tr>
+                            <tr>
+                                <td>303002 </td>
+                                <td>商户编码不存在</td>
+                            </tr>
+                            <tr>
+                                <td>303003 </td>
+                                <td>商户处于异常状态</td>
+                            </tr>
+                            <tr>
+                                <td>303006 </td>
+                                <td>身份证一致，手机号不一致</td>
+                            </tr>
+                            <tr>
+                                <td>303007</td>
+                                <td>手机号一致，身份证不一致</td>
+                            </tr>
+                            <tr>
+                                <td>303008 </td>
+                                <td>实名认证失败</td>
+                            </tr>
+                            <tr>
+                                <td>400000 </td>
+                                <td>鉴权失败</td>
+                            </tr>
+                        </table>
+                        <p class="mt10" id="four_two">4.2 非联合登陆模式</p>
+                        <p>H5 非联合登陆模式，为商户纯导流模式。商户申请开通该产品对接并审核通过后，系统自动生成与商户唯一对应的URL链接，打开该链接则为玖借产品标准化注册/登陆页。</p>
+                        <p class="mt10"><a href="javascript:void(0)" class="defaultLink">点击查询对接URL</a></p>
+                        <h3 id="five">5. 接口文档-API</h3>
+                        <p>玖借产品API对接模式，为全流程对接模式。商户申请开通该产品对接并审核通过后，可获取玖借业务流程图及API接口列表调用时序图，根据标准化流程进行API对接。</p>
+                        <p class="mt10"><a href="javascript:void(0)" class="defaultLink">点击查询玖借业务流程图</a></p>
+                        <p class="mt15">5.1 玖借产品API接口列表</p>
+                        <table class="bd_table">
+                            <tr>
+                                <td>序号</td>
+                                <td>功能</td>
+                                <td>接口名称</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>用户基础服务</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">用户注册</a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>用户基础服务</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">实名验证</a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>用户基础服务</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">用户登陆</a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>用户基础服务</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">绑卡</a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>额度授信</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">运营商授权</a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>额度授信</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">人脸识别</a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>额度授信</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">个人信息补充</a></td>
+                            </tr>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                                <td><a href="javascript:void(0)" class="defaultLink">...</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/header.js"></script>
+<script src="../assets/js/footer.js"></script>
+<script>
+$(".sideBar ul.list-circle > li").click(function(){
+    $(".sideBar ul.list-circle > li").removeClass("on");
+    $(this).addClass("on");
+    if($(this).index()!=3){
+        $(".sideBar li ul li").removeClass("on");
+    }
+});
+$(".sideBar li ul li").click(function(){
+    $(".sideBar li ul li").removeClass("on");
+    $(this).addClass("on");
+});
+$(window).scroll(function(){
+    var windowScTop = $(window).scrollTop();
+    if (windowScTop>130){
+        $(".sideBar").addClass('fixed');
+    }else{
+        $(".sideBar").removeClass('fixed');
+    }
+});
+</script>
+</html>
