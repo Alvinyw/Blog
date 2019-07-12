@@ -7,8 +7,8 @@
 #jfBanner .container { text-align: center; }
 #jfBanner .item .title { font-size: 80px; line-height: 64px; color: #fff;}
 #jfBannerNav { position: absolute; bottom: 5%; left: 50%; margin-left: -65px; width: 130px; text-align: center; }
-#jfBannerNav li { display: inline-block; margin: 0 2px; width: 30px; height: 3px; border: 1px solid #999; border-radius: 2px; background-color: #999; cursor: pointer; }
-#jfBannerNav li.on { border-color: #fff; background: #fff; cursor: default; }
+#jfBannerNav li { display: inline-block; margin: 0 2px; width: 30px; height: 3px; border-radius: 2px; background-color: #fff; cursor: pointer; opacity: .6; }
+#jfBannerNav li.on { border-color: #fff; background: #fff; cursor: default; opacity: 1; }
 
 #jfIndexHeader { position: absolute; top: 0; left: 0; z-index: 100; width: 100%; height: 60px;}
 #jfIndexHeader .lt { width: 60%; float: left;}
@@ -16,7 +16,7 @@
 #jfIndexHeader .rt { width: 40%; float: right; text-align: right;}
 #btnSignIn { margin-top: 15px;}
 
-.subTitle { font-size: 14px; line-height: 24px; color: #999; margin-top: 5px;}
+.subTitle { font-size: 14px; line-height: 24px; color: #999; margin-top: 8px;}
 #indexSec1 { padding: 65px 0 80px;}
 #indexSec1 .qianbao { position: relative; width: 990px; height: 170px; margin: 30px auto 10px; padding: 55px 85px; background-color: #f5f5f5;}
 #indexSec1 .qianbao .quote { position: absolute; left: 30px; top: 10px;}
