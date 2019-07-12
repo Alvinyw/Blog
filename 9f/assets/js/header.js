@@ -11,7 +11,7 @@ var headerEle = "<div id='jfHeader'>"+
             "<li><a href='./resource-center.html'>资源中心</a></li>"+
             "<li><a href='./management-center.html'>管理中心</a></li>"+
             "<li><a href='./account-center.html'>账号中心</a></li>"+
-            "<li><a href='#3'>关于集团</a></li>"+
+            "<li><a target='_blank' href='https://www.9fgroup.com/introduce.html'>关于集团</a></li>"+
         "</ul>"+
     "</div>"+
     "<div class='rt'>"+

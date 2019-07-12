@@ -46,7 +46,8 @@ input { outline: none;}
 #jfHeader .lt a { display: inline-block;}
 #jfHeader .ct { padding-top: 15px; width: 50%; float: left;}
 #jfHeader .ct ul li { float: left; padding: 0 30px;}
-#jfHeader .ct ul li a { display: inline-block; font-size: 16px; line-height: 36px; color: #fff;}
+#jfHeader .ct ul li a { display: inline-block; font-size: 16px; line-height: 36px; color: #fff; opacity: .6;}
+#jfHeader .ct ul li a:hover { opacity: 1;}
 #jfHeader .rt { float: left; width: 28%; height: 65px;}
 #jfHeader .rt:after { content: ''; display: block; clear: both;}
 #jfHeader .rt .alertMsg { float: right; position: relative; padding-top: 21px; margin-right: 30px;}
