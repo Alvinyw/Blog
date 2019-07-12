@@ -36,7 +36,7 @@
 #indexSec1 ul li:nth-child(4) a:hover .icon { background-position: center -350px; }
 #indexSec1 ul li a:hover span:nth-child(2) { color: #FF665F;}
 
-#indexSec2 { padding-top: 80px; border-top: 1px solid #eee;}
+#indexSec2 { padding-top: 80px; padding-bottom: 80px; background-color: #FFF5F5F5;}
 #indexSec2 ul { width: 100%; height: 414px; position: relative; margin-top: 20px; overflow: hidden;}
 #indexSec2 ul li { float: left; height: 100%; width: 200px; transition: All 0.5s;   -moz-transition: All 0.5s;  -webkit-transition: All 0.5s; -o-transition: All 0.5s; }
 #indexSec2 ul li.current { width: 600px;}
@@ -61,7 +61,7 @@
 #indexSec2 ul li.current .type { position: relative; font-size: 20px; line-height: 30px; margin-bottom: 50px; }
 #indexSec2 ul li.current .type:after { display: inline-block; content: ''; position: absolute; top: 50px; left: 50%; margin-left: -25px; width: 50px; height: 3px; background-color: #FF726A; }
 
-#indexSec3 { padding-top: 80px; }
+#indexSec3 { padding-top: 80px; padding-bottom: 80px; }
 #indexSec3 ul { margin-top: 40px;}
 #indexSec3 ul li { position: relative; float: left; width: 25%;}
 #indexSec3 ul li:after { content: ''; display: inline-block; width: 175px; height: 1px; border-top: 1px dashed #ddd; position: absolute; top: 54px; left: 210px; }
@@ -80,7 +80,7 @@
 #indexSec3 ul li:nth-child(3) a:hover .icon { background-position: center -660px;}
 #indexSec3 ul li:nth-child(4) a:hover .icon { background-position: center -770px;}
 
-#indexSec4 { padding-top: 100px; padding-bottom: 120px;}
+#indexSec4 { padding-top: 80px; padding-bottom: 100px; background-color: #FFF5F5F5;}
 #indexSec4 .content { position: relative; margin-top: 40px;}
 #indexSec4 .content .img_share { display: block; margin: 0 auto; }
 #indexSec4 .content .img_map { position: absolute; top: 0; left: 0; right: 0; bottom: 58px; margin: auto; }
