@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scroll Nav</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        #main {
+            width: 980px;
+            margin: 20px auto 100px;
+        }
+
+        #main:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #sideBar {
+            float: left;
+            padding: 15px;
+            width: 200px;
+            background-color: #fff;
+            list-style: none;
+        }
+
+        #sideBar.fixed {
+            position: fixed;
+            top: 5px;
+        }
+
+        #sideBar li {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        #sideBar li a {
+            text-decoration: none;
+            color: #000;
+            opacity: .6;
+        }
+
+        #sideBar li a:hover,
+        #sideBar li.on a {
+            opacity: 1;
+        }
+
+        #sideBar li.on a {
+            font-weight: bolder
+        }
+
+        #mainContent {
+            float: right;
+            padding: 15px;
+            width: 760px;
+            background-color: #fff;
+        }
+
+        #mainContent .item {
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <ul id="sideBar">
+            <li class="on"><a href="#1">1、section1</a></li>
+            <li><a href="#2">2、section2</a></li>
+            <li><a href="#3">3、section3</a></li>
+            <li><a href="#4">4、section4</a></li>
+            <li><a href="#5">5、section5</a></li>
+            <li><a href="#6">6、section6</a></li>
+        </ul>
+        <div id="mainContent">
+            <h3 id="1">1、section1</h3>
+            <div class="item"></div>
+            <h3 id="2">2、section2</h3>
+            <div class="item"></div>
+            <h3 id="3">3、section3</h3>
+            <div class="item"></div>
+            <h3 id="4">4、section4</h3>
+            <div class="item"></div>
+            <h3 id="5">5、section5</h3>
+            <div class="item"></div>
+            <h3 id="6">6、section6</h3>
+            <div class="item"></div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    var sideBarLis = $("#sideBar > li");
+    var numSideBarLis = sideBarLis.length;
+    var arryContentTop = new Array();
+    for (var i = 0; i < numSideBarLis; i++) {
+        //存取每个 section 对应区域的 offsettop 值
+        arryContentTop[i] = document.getElementById(i + 1).offsetTop;
+    }
+    $(window).scroll(function () {
+        var windowScTop = $(window).scrollTop();
+        if (windowScTop > 15) {
+            $("#sideBar").addClass("fixed");
+        } else {
+            $("#sideBar").removeClass("fixed");
+        }
+        for (var j = numSideBarLis - 1; j > -1; j--) {
+            if (windowScTop > arryContentTop[j] || windowScTop == arryContentTop[j]) {
+                sideBarLis.removeClass('on');
+                sideBarLis.eq(j).addClass('on');
+                break;
+            }
+        }
+    });
+    $("#sideBar > li").click(function () {
+        var _this = $(this);
+        setTimeout(function () {
+            $("#sideBar > li").removeClass('on');
+            _this.addClass('on');
+        }, 50);
+    });
+</script>
+
+</html>
