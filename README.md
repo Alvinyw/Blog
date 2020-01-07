@@ -4,7 +4,7 @@
 
 ## 2015-05 买了域名，租了服务器，于是搭了一个新的博客
 
-<a target="_blank" href="http://alvinwp.com/">http://alvinwp.com/</a>
+<a target="_blank" href="https://alvinwp.com/">https://alvinwp.com/</a>
 
 ## 搭了新 Blog 之后，GitHub Pages 就被用来放一些 Demo
 
