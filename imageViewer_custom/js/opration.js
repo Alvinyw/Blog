@@ -1,7 +1,7 @@
 var cfg = {
 	ContainerId:'imageViewer', 
 	Width:'100%', 
-	Height:'97%'
+	Height:'95%'
 }
 var imageViewer = new Alvin.MBC.ImageViewer(cfg);
 

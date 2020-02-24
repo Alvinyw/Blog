@@ -57,6 +57,7 @@
         _this.ThumbnailControlH = 0;
         _this._thumbnailsDiv = document.createElement('div');
         _this._thumbnailsDiv.style.width = _this._thumbnailContainerW + 'px';
+        // _this._thumbnailsDiv.style.width = '100%';
         _this._thumbnailContainer.appendChild(_this._thumbnailsDiv);
 
         lib.addEvent(_this._defaultFileInput, "change", function (event) {
@@ -243,11 +244,16 @@
         _this._imgsDivH = lib.getElDimensions(_this._imgsDiv).clientHeight;
 
         _this._thumbnailContainerW = lib.getElDimensions(_this._thumbnailContainer).clientWidth;
-        //_this._thumbnailContainerH = lib.getElDimensions(_this._thumbnailContainer).clientHeight;
-        _this._thumbnailContainerH = _this._imageViewerH * 0.2;
+        _this._thumbnailContainerH = lib.getElDimensions(_this._thumbnailContainer).clientHeight;
+        // _this._thumbnailContainerH = _this._imageViewerH;
+
+        // console.log(_this._thumbnailContainerW, "_this._thumbnailContainerW ")
+        // console.log(_this._thumbnailContainerH, "_this._thumbnailContainerH ")
+        // console.log(_this.thumbnailImagesPerRow, "_this.thumbnailImagesPerRow ")
+        // console.log(Math.floor(_this._thumbnailContainerH / _this._thumbnailContainerW), "Math.floor(_this._thumbnailContainerH / _this._thumbnailContainerW) ")
 
         // Thumbnails 中每行的控件数
-        _this.thumbnailImagesPerRow = Math.floor(_this._thumbnailContainerW / _this._thumbnailContainerH) > 2 ? Math.floor(_this._thumbnailContainerW / _this._thumbnailContainerH) : 3;
+        _this.thumbnailImagesPerRow = Math.floor(_this._thumbnailContainerH / _this._thumbnailContainerW) > 2 ? Math.floor(_this._thumbnailContainerH / _this._thumbnailContainerW) : 3;
 
         _this._thumbnailsDiv.style.height = _this._thumbnailContainerH + 'px';
     }
@@ -543,7 +549,7 @@
     ImageViewer.prototype.SetThumbnailImageMargin = function (v) {
         var _this = this;
 
-        if (v <= 0 || (v > _this._thumbnailContainerW / _this.thumbnailImagesPerRow) || (v > _this._thumbnailContainerH)) {
+        if (v <= 0 || (v > _this._thumbnailContainerH / _this.thumbnailImagesPerRow) || (v > _this._thumbnailContainerW)) {
             lib.Errors.InvalidValue(_this);
             return false;
         } else {
@@ -1062,12 +1068,12 @@
 
     ImageViewer.prototype.__reInitThumbnailControlPosition = function () {
         var _this = this,
-            x, y, i;
+            l, t, i;
 
         _this.__initThumbnailControlsSize();
 
-        x = _this.ThumbnailImageMargin;
-        y = _this.ThumbnailImageMargin;
+        l = _this.ThumbnailImageMargin;
+        t = _this.ThumbnailImageMargin;
 
         for (i = 0; i < _this.aryThumbnailControls.length; i++) {
             var thumbnailControl = _this.aryThumbnailControls[i],
@@ -1078,14 +1084,14 @@
                 thumbnailControl.ChangeControlSize(_this.ThumbnailControlW, _this.ThumbnailControlH);
             }
 
-            thumbnailControl.SetLocation(x, y);
+            thumbnailControl.SetLocation(l, t);
 
             // 重新计算 thumbnailContainer 的宽度
-            _this._thumbnailsDiv.style.width = (x + thumbnailControl.GetControlWidth()) + 'px';
-            _this._thumbnailContainer.scrollLeft = _this._thumbnailContainer.scrollWidth;
+            _this._thumbnailsDiv.style.height = (t + thumbnailControl.GetControlHeight()) + 'px';
+            _this._thumbnailContainer.scrollTop = _this._thumbnailContainer.scrollHeight;
 
-            x = thumbnailControl.Left + _this.ThumbnailControlW + _this.ThumbnailImageMargin;
-            y = _this.ThumbnailImageMargin;
+            t = thumbnailControl.Top + _this.ThumbnailControlH + _this.ThumbnailImageMargin;
+            l = _this.ThumbnailImageMargin;
 
             // 检查 index 是否有效
             if (bindIndex < 0 || bindIndex >= _this.aryThumbnailControls.length) {
@@ -1097,14 +1103,19 @@
 
     ImageViewer.prototype.__initThumbnailControlsSize = function () {
         //计算 Thumbnail 控件的 _this.ThumbnailControlW;  _this.ThumbnailControlH; 
-        var _this = this;
+        var _this = this,
+            iTotalWidth, iTotalHeight;
 
-        var iTotalWidth = _this._thumbnailContainerW - _this.ThumbnailImageMargin,
-            iTotalHeight = _this._thumbnailContainerH - _this.ThumbnailImageMargin;
+        iTotalWidth = _this._thumbnailContainerW - _this.ThumbnailImageMargin;
+        iTotalHeight = _this._thumbnailContainerH - _this.ThumbnailImageMargin;
 
-        _this.ThumbnailControlW = iTotalWidth / _this.thumbnailImagesPerRow - _this.ThumbnailImageMargin;
-        _this.ThumbnailControlH = iTotalHeight - _this.ThumbnailImageMargin;
-
+        if (_this.aryThumbnailControls.length > _this.thumbnailImagesPerRow) {
+            _this.ThumbnailControlW = iTotalWidth - _this.ThumbnailImageMargin - 15;
+            _this.ThumbnailControlH = iTotalHeight / _this.thumbnailImagesPerRow - _this.ThumbnailImageMargin;
+        } else {
+            _this.ThumbnailControlW = iTotalWidth - _this.ThumbnailImageMargin;
+            _this.ThumbnailControlH = iTotalHeight / _this.thumbnailImagesPerRow - _this.ThumbnailImageMargin;
+        }
     };
 
     ImageViewer.prototype.__setCanvasVisible = function (v) {
