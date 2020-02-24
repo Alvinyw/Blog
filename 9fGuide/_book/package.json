@@ -1,0 +1,21 @@
+{
+  "name": "9f-dev-guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gitbook serve",
+    "build": "gitbook build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alvinyw/9f-dev-guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alvinyw/9f-dev-guide/issues"
+  },
+  "homepage": "https://github.com/Alvinyw/9f-dev-guide#readme"
+}
