@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset='utf-8'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ImageViewer</title>
     <link rel="stylesheet" type="text/css" href="css/cssResetH5.css" />
     <link rel="stylesheet" type="text/css" href="css/mbc.css" />
     <script type="text/javascript">
-    	var Alvin = Alvin || {};
+        var Alvin = Alvin || {};
     </script>
 </head>
+
 <body>
     <div id="main">
-        <div id="toggleTool">APIs</div>
-        <ul id="toolGrp">
+        <div id="toggleTool" style="display: none;">APIs</div>
+        <ul id="toolGrp" style="display: none;">
             <li><button onclick="fuc_LoadImage()">LoadImage</button></li>
             <!--
             <li><button onclick="fuc_getImage()">getImage</button></li>
@@ -69,8 +71,9 @@
 <script>
     $(".visible_inEdit").hide();
     $(".visible_inView").show();
-    $("#toggleTool").click(function(){
+    $("#toggleTool").click(function () {
         $("#toolGrp").slideToggle();
     });
 </script>
+
 </html>
