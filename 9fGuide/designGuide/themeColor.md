@@ -1,3 +1,3 @@
 # 1. 主题色
 
-[设计规范](https://alvinyw.github.io/Blog/9fGuide/index.html?_blank)
+[设计规范](https://alvinyw.github.io/Blog/9fGuide/design/index.html?_blank)
