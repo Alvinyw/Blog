@@ -1,0 +1,38 @@
+.resultView {
+  .result {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      padding: 96px 0 98px;
+      margin: 20px auto 100px;
+    }
+
+    &-icon {
+      width: 124px;
+      height: 124px;
+    }
+
+    &-remark {
+      margin: 34px 0 0;
+      line-height: 1;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    &-detail {
+      color: #666;
+      font-size: 28px;
+      margin-top: 20px;
+      ;
+    }
+  }
+
+  .button-back {
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    font-size: 36px;
+  }
+}
