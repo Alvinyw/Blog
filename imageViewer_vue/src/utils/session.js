@@ -1,7 +1,5 @@
 const Language = 'language'
 const ifAcceptLandingAgreement = 'ifAcceptLandingAgreement'
-const ifAcceptEnterAgreement = 'ifAcceptEnterAgreement'
-const initInfo = "initInfo"
 const enterForm = "enterForm"
 
 // 当前语言
@@ -18,22 +16,6 @@ export function getIfAcceptLandingAgreement() {
 }
 export function setIfAcceptLandingAgreement(val) {
   return sessionStorage.setItem(ifAcceptLandingAgreement, val)
-}
-
-// 快速进入页 是否接受协议
-export function getIfAcceptEnterAgreement() {
-  return sessionStorage.getItem(ifAcceptEnterAgreement)
-}
-export function setIfAcceptEnterAgreement(val) {
-  return sessionStorage.setItem(ifAcceptEnterAgreement, val)
-}
-
-// 保存初始化数据
-export function getInitInfo() {
-  return JSON.parse(sessionStorage.getItem(initInfo))
-}
-export function setInitInfo(val) {
-  return sessionStorage.setItem(initInfo, JSON.stringify(val))
 }
 
 // 保存快速进入页表单数据

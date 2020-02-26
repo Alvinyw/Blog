@@ -19,6 +19,10 @@ import './permission'
 import lottie from 'vue-lottie';
 Vue.component('lottie', lottie)
 
+// 引入全局 loading 组件
+import Loading from './components/Loading/loading'
+Vue.use(Loading)
+
 Vue.config.productionTip = false
 
 new Vue({

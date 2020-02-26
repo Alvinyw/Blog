@@ -7,12 +7,12 @@ const router = new Router({
   mode: 'history',
   routes: [{
       path: '/',
-      redirect: '/landingPage',
+      redirect: '/home',
     },
     {
-      path: '/landingPage',
-      name: 'landingIndex',
-      component: () => import( /* webpackChunkName: "home" */ '@/views/landing'),
+      path: '/home',
+      name: 'HomePage',
+      component: () => import( /* webpackChunkName: "home" */ '@/views/home'),
     },
 
     // 成功
@@ -35,6 +35,8 @@ const router = new Router({
       name: 'defaultIndex',
       component: () => import( /* webpackChunkName: "home" */ '@/views/default'),
     },
+
+    // 找不到资源页面
     {
       path: '/404',
       name: '404',

@@ -1,4 +1,5 @@
 import Vue from 'vue'
 
-import waves from './waves' // 水波纹指令
+// 水波纹指令
+import waves from './waves'
 waves.install(Vue)
