@@ -18,3 +18,4 @@
 #### 6. [DsTooltip](https://github.com/Alvinyw/DsTooltip): 鼠标移上去出现提示内容
 #### 7. [DsSelect](https://github.com/Alvinyw/DsSelect): Div + Css 模拟的兼容各大主流浏览器的 select 下拉列表
 #### 8. [canvasDrag](https://github.com/Alvinyw/canvasDrag): 用 Canvas 实现通过鼠标拖拽改变四边形形状的功能
+#### 9. [imageViewer](https://github.com/Alvinyw/imageViewer): 一款基于 Html5、Canvas 的图片编辑器
