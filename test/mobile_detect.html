@@ -13,24 +13,26 @@
 <script src="./js//jquery.min.js"></script>
 <script src="./js/mobile-detect.min.js"></script>
 <script>
-    //判断数组中是否包含某字符串
-    Array.prototype.contains = function (needle) {
-        for (i in this) {
-            if (this[i].indexOf(needle) > 0)
-                return i;
-        }
-        return -1;
-    }
-    var device_type = navigator.userAgent;//获取userAgent信息
-    document.write(device_type);//打印到页面
-    var md = new MobileDetect(device_type);//初始化mobile-detect
-    var os = md.os();//获取系统
-    var model = "";
-    
-    var _str = "mobile:" + md.mobile() + "\nphone:" + md.phone() + "\ntablet:" + md.tablet() + "\nuserAgent:" + md.userAgent + "\nuserAgents:" + md.userAgents + "\nos:" + md.os() + "\nversion:" + md.version() + "\nis:" + md.is() + "\nmatch:" + md.match() + "\nisPhoneSized:" + md.isPhoneSized + "\nmobileGrade:" + md.mobileGrade
+    console.log(plus.device, "plus.device")
+    console.log(plus.device.getInfo, "plus.device.getInf")
+    // //判断数组中是否包含某字符串
+    // Array.prototype.contains = function (needle) {
+    //     for (i in this) {
+    //         if (this[i].indexOf(needle) > 0)
+    //             return i;
+    //     }
+    //     return -1;
+    // }
+    // var device_type = navigator.userAgent;//获取userAgent信息
+    // document.write(device_type);//打印到页面
+    // var md = new MobileDetect(device_type);//初始化mobile-detect
+    // var os = md.os();//获取系统
+    // var model = "";
 
-    console.log(_str, "mobile_detect")
-    alert(_str)
+    // var _str = "mobile:" + md.mobile() + "\nphone:" + md.phone() + "\ntablet:" + md.tablet() + "\nuserAgent:" + md.userAgent + "\nuserAgents:" + md.userAgents + "\nos:" + md.os() + "\nversion:" + md.version() + "\nis:" + md.is() + "\nmatch:" + md.match() + "\nisPhoneSized:" + md.isPhoneSized + "\nmobileGrade:" + md.mobileGrade
+
+    // console.log(_str, "mobile_detect")
+    // alert(_str)
     // if (os == "iOS") {//ios系统的处理
     //     os = md.os() + md.version("iPhone");
     //     model = md.mobile();
