@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="18px" viewBox="0 0 28 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>240显示、可见</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-钱包" transform="translate(-390.000000, -257.000000)" fill-rule="nonzero">
+            <g id="240显示、可见" transform="translate(386.000000, 248.000000)">
+                <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="36" height="36"></rect>
+                <path d="M18,9 C12.09375,9 6.4125,12.740625 4.5,18 C6.4125,23.259375 12.09375,27 18,27 C23.878125,27 29.615625,23.259375 31.528125,18 C29.5875,12.740625 23.878125,9 18,9 Z M18,23.625 C14.90625,23.625 12.375,21.09375 12.375,18 C12.375,14.90625 14.90625,12.375 18,12.375 C21.09375,12.375 23.625,14.90625 23.625,18 C23.625,21.09375 21.09375,23.625 18,23.625 Z M21.375,18 C21.375,19.85625 19.85625,21.375 18,21.375 C16.14375,21.375 14.625,19.85625 14.625,18 C14.625,16.14375 16.14375,14.625 18,14.625 C19.85625,14.625 21.375,16.14375 21.375,18 Z" id="形状" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

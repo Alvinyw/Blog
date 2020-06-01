@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="30px" viewBox="0 0 36 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>common_card</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-默认支付" transform="translate(-31.000000, -360.000000)" fill-rule="nonzero">
+            <g id="编组-2" transform="translate(0.000000, 202.000000)">
+                <g id="编组-5备份" transform="translate(30.000000, 154.000000)">
+                    <g id="common_card">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="38" height="38"></rect>
+                        <path d="M36.48,12.901 L36.48,6.84 C36.48,5.586 35.454,4.56 34.2,4.56 L3.8,4.56 C2.546,4.56 1.52,5.586 1.52,6.84 L1.52,12.901 L36.48,12.901 Z M1.52,16.701 L1.52,31.312 C1.52,32.49 2.489,33.44 3.648,33.44 L34.238,33.44 C35.492,33.44 36.499,32.433 36.4802645,31.198 L36.4802645,16.701 L1.52,16.701 Z M31.502,24.567 L30.799,27.36 C30.666,27.93 30.153,28.329 29.564,28.329 L26.353,28.329 C25.935,28.329 25.631,27.93 25.726,27.531 L26.467,24.605 C26.581,24.111 27.037,23.769 27.531,23.769 L30.894,23.769 C31.312,23.769 31.616,24.168 31.502,24.567 L31.502,24.567 Z" id="形状" fill="#FFCC01"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
