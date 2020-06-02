@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="22px" viewBox="0 0 14 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>路径</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-706.000000, -533.000000)" fill="#CCCCCC" fill-rule="nonzero">
+            <g id="公告" transform="translate(0.000000, 498.000000)">
+                <path d="M719.638235,45.2686328 L706.379412,35.0498077 C706.223529,34.9308154 706,35.0381987 706,35.2326495 L706,37.4760894 C706,37.6182997 706.067647,37.7547055 706.179412,37.841773 L716.767647,46 L706.179412,54.158227 C706.064706,54.2452945 706,54.3817003 706,54.5239106 L706,56.7673505 C706,56.9618013 706.226471,57.0691846 706.379412,56.9501923 L719.638235,46.7313672 C720.120588,46.3598791 720.120588,45.6401209 719.638235,45.2686328 Z" id="路径"></path>
+            </g>
+        </g>
+    </g>
+</svg>
