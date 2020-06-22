@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title> application_creditCard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FD9745" offset="0%"></stop>
+            <stop stop-color="#F97B48" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-应用产品" transform="translate(-260.000000, -1267.000000)" fill-rule="nonzero">
+            <g id="编组-4备份-2" transform="translate(0.000000, 1195.000000)">
+                <g id="编组-3备份" transform="translate(222.000000, 72.000000)">
+                    <g id="信用卡" transform="translate(38.000000, 0.000000)">
+                        <g id="编组-11" transform="translate(3.000000, 10.000000)">
+                            <path d="M49.7536946,9.12151067 L0,9.12151067 L0,4.97536946 C0,2.22754878 2.22754878,-3.90798505e-14 4.97536946,-3.90798505e-14 L44.7783251,-3.90798505e-14 C47.5261458,-3.90798505e-14 49.7536946,2.22754878 49.7536946,4.97536946 L49.7536946,9.12151067 Z M49.7536946,12.2761833 L49.7536946,30.6838259 C49.7536946,33.6593167 47.5261458,36.0714286 44.7783251,36.0714286 L4.97536946,36.0714286 C2.22754878,36.0714286 0,33.6593167 0,30.6838259 L0,12.2761833 L49.7536946,12.2761833 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+                            <rect id="矩形" fill="#FFFFFF" x="42" y="22" width="3" height="6" rx="1.5"></rect>
+                            <rect id="矩形备份-2" fill="#FFFFFF" x="36" y="22" width="3" height="6" rx="1.5"></rect>
+                            <rect id="矩形备份-4" fill="#FFFFFF" x="30" y="22" width="3" height="6" rx="1.5"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

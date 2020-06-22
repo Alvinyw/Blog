@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="57px" viewBox="0 0 56 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title> application_wallet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF7A68" offset="0%"></stop>
+            <stop stop-color="#FF3519" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-应用产品" transform="translate(-77.000000, -711.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="编组-4" transform="translate(0.000000, 639.000000)">
+                <g id="编组-3" transform="translate(26.000000, 72.000000)">
+                    <g id="-application_wallet" transform="translate(51.000000, 0.000000)">
+                        <path d="M46.4,11 C48.9405098,11 51,13.0594902 51,15.6 L51,23.65 L39.4333333,23.65 C36.8928235,23.65 34.8333333,25.7094902 34.8333333,28.25 C34.8333333,30.7905098 36.8928235,32.85 39.4333333,32.85 L51,32.85 L51,40.9 C51,43.4405098 48.9405098,45.5 46.4,45.5 L9.6,45.5 C7.05949015,45.5 5,43.4405098 5,40.9 L5,15.6 C5,13.0594902 7.05949015,11 9.6,11 L46.4,11 Z M40.5,26 C41.8807119,26 43,27.1192881 43,28.5 C43,29.8807119 41.8807119,31 40.5,31 C39.1192881,31 38,29.8807119 38,28.5 C38,27.1192881 39.1192881,26 40.5,26 Z" id="形状结合"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

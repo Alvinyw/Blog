@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="57px" viewBox="0 0 56 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title> application_financialManagement</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="64.0593148%" id="linearGradient-1">
+            <stop stop-color="#FFDD80" offset="0%"></stop>
+            <stop stop-color="#ED9709" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#F5C74A" offset="0%"></stop>
+            <stop stop-color="#ED9709" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-应用产品" transform="translate(-77.000000, -989.000000)" fill-rule="nonzero">
+            <g id="编组-4备份" transform="translate(0.000000, 917.000000)">
+                <g id="编组-3" transform="translate(52.000000, 72.000000)">
+                    <g id="-application_financialManagement" transform="translate(25.000000, 0.000000)">
+                        <g id="编组-15备份" transform="translate(2.000000, 10.000000)">
+                            <ellipse id="椭圆形备份-5" fill="url(#linearGradient-1)" cx="26" cy="10.5" rx="12" ry="10.5"></ellipse>
+                            <path d="M25.5801242,36.557318 C10.8952381,36.557318 0,25.3999233 0,11.6365794 C0,5.96925408 7.42687898,3.41167973 14.3294655,9.55061455 C18.0268026,12.8389053 20.8368502,13.9158883 25.5801242,13.9158883 C25.7213894,13.9158883 25.8613407,13.9155602 26,13.9149024 L26.2089607,13.915642 L26.2089607,13.915642 L26.4198758,13.9158883 C31.1631498,13.9158883 33.9731974,12.8389053 37.6705345,9.55061455 C44.573121,3.41167973 52,5.96925408 52,11.6365794 C52,25.3999233 41.1047619,36.557318 26.4198758,36.557318 C26.2792298,36.557318 26.1392721,36.5567198 26,36.5555268 L26,36.5555268 L25.5801242,36.557318 L25.5801242,36.557318 Z" id="形状结合" fill="url(#linearGradient-2)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
