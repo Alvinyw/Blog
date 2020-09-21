@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["agreement"],{"6f07":function(e,n,t){"use strict";t.r(n);var r=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("SvgAgreement",{attrs:{"agreement-src":e.$route.query.agreementSrc}})},a=[],u={name:"Agreement"},c=u,s=t("2877"),l=Object(s["a"])(c,r,a,!1,null,null,null);n["default"]=l.exports}}]);
