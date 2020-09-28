@@ -1,0 +1,52 @@
+<html lang="zh-cn">
+
+<head>
+	<meta charset="UTF-8">
+	<title>转盘 - 不带点击、旋转等方法</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+			font-size: 16px;
+			font-family: "Microsoft YaHei";
+		}
+
+		body {
+			background: #f5f5f5;
+		}
+
+		.result span {
+			display: inline-block;
+			margin: 10px;
+			padding: 0 15px;
+			height: 60px;
+			font-size: 14px;
+			line-height: 58px;
+			font-weight: bold;
+			text-align: center;
+			background: #ddd;
+			border: 1px solid #aaa;
+			border-radius: 10px;
+			box-shadow: 0 0 14px #999;
+			cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/CanvasTurntable_withoutFunction.js"></script>
+</head>
+
+<body>
+	<div id="CanvasTurntable" style="width:400px; margin:60px auto"></div>
+	<script>
+		/* 调用 AddCanvasTurntable 方法 */
+		$(function () {
+			$("#CanvasTurntable").AddCanvasTurntable_withoutFunction({
+				sectorText: ["张某某", "李某某", "王某某", "韩某某", "廖某某", "赵某某"],
+				rotateTime: 3
+			});
+		});
+	</script>
+</body>
+
+</html>
