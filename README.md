@@ -20,11 +20,11 @@
 #### 11. [scrollNav](https://github.com/Alvinyw/scrollNav): 滚动响应切换侧边栏导航
 
 ## 开源项目目录
-####1. 基于Javascript、Canvas的图片编辑器：https://www.npmjs.com/package/alvin-imageviewer
-####2. 轻量可扩展的前端代码高亮插件：https://www.npmjs.com/package/alvin-codehighlight
-####3. 响应鼠标 hover 的内容提示插件：https://www.npmjs.com/package/alvin-tooltip
-####4. 传入配置数据绘制随机抽奖大转盘：https://www.npmjs.com/package/alvin-canvasturntable
-####5. 通过鼠标拖拽框选不规则四边形： https://www.npmjs.com/package/alvin-canvasdrag
+#### 1. 基于Javascript、Canvas的图片编辑器：https://www.npmjs.com/package/alvin-imageviewer
+#### 2. 轻量可扩展的前端代码高亮插件：https://www.npmjs.com/package/alvin-codehighlight
+#### 3. 响应鼠标 hover 的内容提示插件：https://www.npmjs.com/package/alvin-tooltip
+#### 4. 传入配置数据绘制随机抽奖大转盘：https://www.npmjs.com/package/alvin-canvasturntable
+#### 5. 通过鼠标拖拽框选不规则四边形： https://www.npmjs.com/package/alvin-canvasdrag
 
 ## 项目展示（数据均为 Mock 生成的随机数据）
 #### 1. [TEOPERATION](https://alvinyw.github.io/Blog/TEOPERATION/#)：运营平台：后台管理系统
