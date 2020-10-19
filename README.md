@@ -1,27 +1,32 @@
-﻿## 这是我用 GitHub Pages 搭建的静态博客 
+﻿## GitHub Pages 
 
-<a target="_blank" href="https://alvinyw.github.io/Blog/">https://alvinyw.github.io/Blog/</a>
+<a target="_blank" href="https://alvinyw.github.io/">https://alvinyw.github.io/</a>
 
-## 2015-05 买了域名，租了服务器，于是搭了一个新的博客
+## 技术博客
 
 <a target="_blank" href="https://alvinwp.com/">https://alvinwp.com/</a>
 
-## 搭了新 Blog 之后，GitHub Pages 就被用来放一些 Demo
-
 ## 仓库目录
+#### 1. [imageViewer](https://github.com/Alvinyw/imageViewer): 一款基于 Javascript、Html5、Canvas 的图片编辑器
+#### 2. [CodeHighlight](https://github.com/Alvinyw/CodeHighlight)：轻量可扩展的前端代码高亮插件
+#### 3. [easyTooltip](https://github.com/Alvinyw/easyTooltip): 响应鼠标 hover 的内容提示插件
+#### 4. [canvasTurntable](https://github.com/Alvinyw/canvasTurntable)：传入配置数据绘制随机抽奖大转盘
+#### 5. [typewriter](https://github.com/Alvinyw/typewriter): 通过 Javascript 实现打字机插件
+#### 6. [canvasDrag](https://github.com/Alvinyw/canvasDrag): 用 Canvas 实现通过鼠标拖拽框选不规则四边形
+#### 7. [GitBook](https://github.com/Alvinyw/GitBook)：用 gitbook 搭建一个用来管理文档的站点
+#### 8. [crossDomain](https://github.com/Alvinyw/crossDomain)：跨域通信 Demo
+#### 9. [DsScrollToTop](https://github.com/Alvinyw/DsScrollToTop)：点击滚动到页面顶部
+#### 10. [DsSelect](https://github.com/Alvinyw/DsSelect): Div + Css 模拟的兼容各大主流浏览器的 select 下拉列表
+#### 11. [scrollNav](https://github.com/Alvinyw/scrollNav): 滚动响应切换侧边栏导航
 
-#### 1. [imageViewer](https://github.com/Alvinyw/imageViewer?_blank): 一款基于 Html5、Canvas 的图片编辑器
-#### 2. [CodeHighlight](https://github.com/Alvinyw/CodeHighlight?_blank)：代码高亮插件 Demo
-#### 3. [GitBook](https://github.com/Alvinyw/GitBook?_blank)：用 gitbook 搭建一个用来管理文档的站点
-#### 4. [crossDomain](https://github.com/Alvinyw/crossDomain?_blank)：跨域通信 Demo
-#### 5. [DsScrollToTop](https://github.com/Alvinyw/DsScrollToTop?_blank)：点击滚动到页面顶部
-#### 6. [DsTooltip](https://github.com/Alvinyw/DsTooltip?_blank): 鼠标移上去出现提示内容
-#### 7. [DsSelect](https://github.com/Alvinyw/DsSelect?_blank): Div + Css 模拟的兼容各大主流浏览器的 select 下拉列表
-#### 8. [canvasDrag](https://github.com/Alvinyw/canvasDrag?_blank): 用 Canvas 实现通过鼠标拖拽改变四边形形状的功能
+## 开源项目目录
+####1. 基于Javascript、Canvas的图片编辑器：https://www.npmjs.com/package/alvin-imageviewer
+####2. 轻量可扩展的前端代码高亮插件：https://www.npmjs.com/package/alvin-codehighlight
+####3. 响应鼠标 hover 的内容提示插件：https://www.npmjs.com/package/alvin-tooltip
+####4. 传入配置数据绘制随机抽奖大转盘：https://www.npmjs.com/package/alvin-canvasturntable
+####5. 通过鼠标拖拽框选不规则四边形： https://www.npmjs.com/package/alvin-canvasdrag
 
-
-## 项目 Demo
-
+## 项目展示（数据均为 Mock 生成的随机数据）
 #### 1. [TEOPERATION](https://alvinyw.github.io/Blog/TEOPERATION/#)：运营平台：后台管理系统
 #### 2. [SUPERBRAIN](https://alvinyw.github.io/Blog/SUPERBRAIN/#)：开放平台：商户、服务商使用
 #### 3. [OPENHKACCOUNT](https://alvinyw.github.io/Blog/OPENHKACCOUNT/#)：香港大中华证券开户项目
