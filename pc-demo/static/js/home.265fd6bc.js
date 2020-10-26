@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["home"],{8809:function(n,e,t){"use strict";t.r(e);var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",{attrs:{id:"main"}},[n._v("\n    404 页面\n")])},u=[],i={name:"Notfund"},l=i,o=t("2877"),r=Object(o["a"])(l,a,u,!1,null,null,null);e["default"]=r.exports}}]);
+//# sourceMappingURL=home.265fd6bc.js.map
