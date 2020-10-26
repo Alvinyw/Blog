@@ -9,12 +9,12 @@
 ## 开源项目目录
 #### 1. [alvin-imageviewer](https://www.npmjs.com/package/alvin-imageviewer)：基于Javascript、Canvas的图片编辑器
 #### 2. [alvin-codehighlight](https://www.npmjs.com/package/alvin-codehighlight)：轻量可扩展的前端代码高亮插件
-#### 2. [alvin-electronicsignature](https://www.npmjs.com/package/vue-electronicsignature)：基于 Vue 实现电子签名组件
-#### 2. [alvin-identifycode](https://www.npmjs.com/package/vue-identifycode)：基于 Vue 实现图形校验码组件
-#### 2. [alvin-typewriter](https://www.npmjs.com/package/alvin-typewriter)：通过 Javascript 实现打字机插件
-#### 3. [alvin-tooltip](https://www.npmjs.com/package/alvin-tooltip)：响应鼠标 hover 的内容提示插件
-#### 4. [alvin-canvasturntable](https://www.npmjs.com/package/alvin-canvasturntable)：传入配置数据绘制随机抽奖大转盘
-#### 5. [alvin-canvasdrag](https://www.npmjs.com/package/alvin-canvasdrag)：通过鼠标拖拽框选不规则四边形
+#### 3. [alvin-electronicsignature](https://www.npmjs.com/package/vue-electronicsignature)：基于 Vue 实现电子签名组件
+#### 4. [alvin-identifycode](https://www.npmjs.com/package/vue-identifycode)：基于 Vue 实现图形校验码组件
+#### 5. [alvin-typewriter](https://www.npmjs.com/package/alvin-typewriter)：通过 Javascript 实现打字机插件
+#### 6. [alvin-tooltip](https://www.npmjs.com/package/alvin-tooltip)：响应鼠标 hover 的内容提示插件
+#### 7. [alvin-canvasturntable](https://www.npmjs.com/package/alvin-canvasturntable)：传入配置数据绘制随机抽奖大转盘
+#### 8. [alvin-canvasdrag](https://www.npmjs.com/package/alvin-canvasdrag)：通过鼠标拖拽框选不规则四边形
 
 ## 项目展示（数据均为 Mock 生成的随机数据）
 #### 1. [TEOPERATION](https://alvinyw.github.io/Blog/TEOPERATION/#)：运营平台：后台管理系统
